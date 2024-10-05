@@ -17,7 +17,8 @@ public class Flea : MonoBehaviour
     public float SpinHitUpForce = 100f;
     public LayerMask GroundLayers;
 
-    bool TouchingGround => Physics2D.Raycast(transform.position, Vector2.down, 1.1f, GroundLayers);
+    bool IsTouchingGround => Physics2D.Raycast(transform.position, Vector2.down, 0.65f, GroundLayers);
+    bool TouchingGround = false;
 
     public int FleaNumber = 0;
 
@@ -83,6 +84,8 @@ public class Flea : MonoBehaviour
             };
             inputs.Add(frameInput);
         }
+
+        TouchingGround = IsTouchingGround;
 
         HandleInputs(frameInput);
 

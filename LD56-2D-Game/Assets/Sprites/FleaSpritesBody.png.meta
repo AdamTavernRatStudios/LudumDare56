@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FleaSpritesBody_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1448
+        width: 600
+        height: 600
+      alignment: 9
+      pivot: {x: 0.4, y: 0.28}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeb48ae9e0efea4c9112dedda18eb0e
+      internalID: -1917976005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FleaSpritesBody_1
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 1446
+        width: 600
+        height: 600
+      alignment: 9
+      pivot: {x: 0.37, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6254fa5bb35363c489a5d46188fb965e
+      internalID: -2073070019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FleaSpritesBody_2
+      rect:
+        serializedVersion: 2
+        x: 1198
+        y: 1448
+        width: 600
+        height: 600
+      alignment: 9
+      pivot: {x: 0.51, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390f8a46f4e56f74cb3f7078d8fc5205
+      internalID: -2028790503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FleaSpritesBody_0: -1917976005
+      FleaSpritesBody_1: -2073070019
+      FleaSpritesBody_2: -2028790503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

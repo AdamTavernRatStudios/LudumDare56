@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f2c12a7da1f59d4f8951edbda49a06b
+guid: fec8c10d8cd0d434fabae8d054fb8568
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,13 +43,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 10, y: 10, z: 10, w: 10}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -121,84 +121,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: FleaSpritesHatBand_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1448
-        width: 600
-        height: 600
-      alignment: 9
-      pivot: {x: 0.4, y: 0.28}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc2bc889647d6ae4bb9e1a7427dc2f91
-      internalID: 133772292
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FleaSpritesHatBand_1
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 1448
-        width: 600
-        height: 600
-      alignment: 9
-      pivot: {x: 0.37, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e283a99163f16c14d8c93f506eabb09b
-      internalID: 320252911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FleaSpritesHatBand_2
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1448
-        width: 600
-        height: 600
-      alignment: 9
-      pivot: {x: 0.51, y: 0.32}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55f3e24712287eb4c9a9f4a9e8388250
-      internalID: 1223730994
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      FleaSpritesHatBand_0: 133772292
-      FleaSpritesHatBand_1: 320252911
-      FleaSpritesHatBand_2: 1223730994
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

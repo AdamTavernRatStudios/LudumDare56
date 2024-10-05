@@ -27,10 +27,4 @@ public class FlamingHoop : MonoBehaviour
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.JumpThroughHoop);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
