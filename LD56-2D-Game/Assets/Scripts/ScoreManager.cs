@@ -34,6 +34,7 @@ public class ScoreManager : MonoBehaviour
         LandOnPlatform = 3,
         SpinFlea = 4,
         GetSpunByFlea = 5,
+        JumpThroughHoop = 6,
     }
 
 
@@ -107,6 +108,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.LandOnPlatform: return 15;
             case TrickType.SpinFlea: return 20;
             case TrickType.GetSpunByFlea: return 20;
+            case TrickType.JumpThroughHoop: return 30;
             default: return 0;
         }
     }
@@ -120,6 +122,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.LandOnPlatform: return "Land";
             case TrickType.SpinFlea: return "Twirl a flea";
             case TrickType.GetSpunByFlea: return "Be twirled";
+            case TrickType.JumpThroughHoop: return "Flaming hoop";
             default: return "";
         }
     }
