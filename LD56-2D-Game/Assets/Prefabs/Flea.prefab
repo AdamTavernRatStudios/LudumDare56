@@ -151,6 +151,8 @@ MonoBehaviour:
   - {r: 1, g: 0.37203765, b: 0, a: 1}
   - {r: 0.6278157, g: 0, b: 1, a: 1}
   Body: {fileID: 1501685054702178763}
+  ComboCounter: 0
+  canvas: {fileID: 0}
 --- !u!70 &3486902276095667148
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
