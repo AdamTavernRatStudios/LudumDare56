@@ -3,12 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using static Rewired.ComponentControls.Effects.RotateAroundAxis;
 
 public class Flea : MonoBehaviour
 {
     PlayerInput input;
-    Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
 
     public float JumpHeight = 10f;
     public float MoveSpeed = 10f;
@@ -18,7 +20,8 @@ public class Flea : MonoBehaviour
     public LayerMask GroundLayers;
 
     bool IsTouchingGround => Physics2D.Raycast(transform.position, Vector2.down, 0.65f, GroundLayers);
-    bool TouchingGround = false;
+    [HideInInspector]
+    public bool TouchingGround = false;
 
     public int FleaNumber = 0;
 
@@ -32,10 +35,18 @@ public class Flea : MonoBehaviour
 
     public Color FleaColor => fleaColors[FleaNumber % fleaColors.Count];
 
+    public SpriteRenderer HatSpriteRenderer;
+
     public GameObject Body;
 
     [HideInInspector]
     public int ComboCounter = 0;
+
+    [HideInInspector]
+    public UnityEvent Twirl = new();
+
+    public ParticleSystem SpinParticles;
+    public ParticleSystem DustJumpParticles;
     public class FrameInput
     {
         public float MoveInput = 0f;
@@ -51,8 +62,8 @@ public class Flea : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
-        var sr = Body.GetComponentInChildren<SpriteRenderer>();
-        sr.color = FleaColor;
+        HatSpriteRenderer.color = FleaColor;
+        GetComponentInChildren<TrailRenderer>().startColor = FleaColor;
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
@@ -85,11 +96,21 @@ public class Flea : MonoBehaviour
             inputs.Add(frameInput);
         }
 
+        var InAir = !TouchingGround;
         TouchingGround = IsTouchingGround;
+        if(InAir && TouchingGround)
+        {
+            DustJumpParticles.Emit(10);
+        }
 
         HandleInputs(frameInput);
 
         AddHorizontalDrag();
+
+        if(Mathf.Abs(rb.velocity.x) > 0.5f)
+        {
+            transform.localScale = new Vector3(rb.velocity.x < 0 ? -1 : 1, 1, 1);
+        }
 
         FixedUpdateCounter++;
     }
@@ -107,22 +128,33 @@ public class Flea : MonoBehaviour
         }
         if(frameInput.SpinJustPressed && !TouchingGround)
         {
-            LeanTween.cancel(Body);
-            Body.transform.rotation = Quaternion.identity;
-            LeanTween.rotateAroundLocal(Body, Vector3.forward, 360f, 0.2f).setEaseOutCubic();
-            var hits = Physics2D.OverlapCircleAll(transform.position, SpinCircleRadius);
-            bool HitFlea = false;
-            foreach(var hit in hits)
-            {
-                var flea = hit.GetComponent<Flea>();
-                if (flea != null && flea != this)
-                {
-                    HitFlea = true;
-                    flea.GetBonked();
-                }
-            }
-            ScoreManager.AddTrick(this, HitFlea ? ScoreManager.TrickType.SpinFlea : ScoreManager.TrickType.Spin);
+            DoTwirl();
         }
+    }
+
+    float TimeOfLastTwirl = float.MinValue;
+    float TimeBetweenTwirls = 0.5f;
+    private void DoTwirl()
+    {
+        if (Time.time - TimeOfLastTwirl < TimeBetweenTwirls)
+        {
+            return;
+        }
+        TimeOfLastTwirl = Time.time;
+        var hits = Physics2D.OverlapCircleAll(transform.position, SpinCircleRadius);
+        bool HitFlea = false;
+        foreach (var hit in hits)
+        {
+            var flea = hit.GetComponent<Flea>();
+            if (flea != null && flea != this)
+            {
+                HitFlea = true;
+                flea.GetBonked();
+            }
+        }
+        ScoreManager.AddTrick(this, HitFlea ? ScoreManager.TrickType.SpinFlea : ScoreManager.TrickType.Spin);
+        SpinParticles.Emit(20);
+        Twirl.Invoke();
     }
 
     private void AddHorizontalDrag()
@@ -147,6 +179,7 @@ public class Flea : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, JumpHeight);
+        DustJumpParticles.Emit(10);
         ScoreManager.AddTrick(this, ScoreManager.TrickType.Jump);
     }
 
