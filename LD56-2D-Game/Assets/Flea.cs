@@ -29,8 +29,12 @@ public class Flea : MonoBehaviour
 
     public List<Color> fleaColors = new();
 
+    public Color FleaColor => fleaColors[FleaNumber % fleaColors.Count];
+
     public GameObject Body;
 
+    [HideInInspector]
+    public int ComboCounter = 0;
     public class FrameInput
     {
         public float MoveInput = 0f;
@@ -47,7 +51,7 @@ public class Flea : MonoBehaviour
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         var sr = Body.GetComponentInChildren<SpriteRenderer>();
-        sr.color = fleaColors[FleaNumber % fleaColors.Count];
+        sr.color = FleaColor;
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
@@ -100,19 +104,21 @@ public class Flea : MonoBehaviour
         }
         if(frameInput.SpinJustPressed && !TouchingGround)
         {
-            Debug.Log("Spin!");
             LeanTween.cancel(Body);
             Body.transform.rotation = Quaternion.identity;
             LeanTween.rotateAroundLocal(Body, Vector3.forward, 360f, 0.2f).setEaseOutCubic();
             var hits = Physics2D.OverlapCircleAll(transform.position, SpinCircleRadius);
+            bool HitFlea = false;
             foreach(var hit in hits)
             {
                 var flea = hit.GetComponent<Flea>();
                 if (flea != null && flea != this)
                 {
+                    HitFlea = true;
                     flea.GetBonked();
                 }
             }
+            ScoreManager.AddTrick(this, HitFlea ? ScoreManager.TrickType.SpinFlea : ScoreManager.TrickType.Spin);
         }
     }
 
@@ -129,19 +135,16 @@ public class Flea : MonoBehaviour
         rb.AddForce(dragForce, ForceMode2D.Force);
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void GetBonked()
     {
         rb.velocity = new Vector3(rb.velocity.x, SpinHitUpForce);
+        ScoreManager.AddTrick(this, ScoreManager.TrickType.GetSpunByFlea);
     }
 
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, JumpHeight);
+        ScoreManager.AddTrick(this, ScoreManager.TrickType.Jump);
     }
 
     private void Move(float moveAmount)
