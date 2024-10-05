@@ -12,12 +12,9 @@ public class Flea : MonoBehaviour
 
     public float JumpHeight = 10f;
     public float MoveSpeed = 10f;
-
-
-    bool JumpIsPressed = false;
-    float MoveInput = 0f;
     public float AddedFastFallGravity = 5f;
     public float HorizontalDragCoefficient = 1f;
+    public float SpinHitUpForce = 100f;
     public LayerMask GroundLayers;
 
     bool TouchingGround => Physics2D.Raycast(transform.position, Vector2.down, 1.1f, GroundLayers);
@@ -28,7 +25,11 @@ public class Flea : MonoBehaviour
 
     public List<FrameInput> inputs = new();
 
+    public float SpinCircleRadius = 2f;
+
     public List<Color> fleaColors = new();
+
+    public GameObject Body;
 
     public class FrameInput
     {
@@ -45,7 +46,8 @@ public class Flea : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
-        GetComponentInChildren<SpriteRenderer>().color = fleaColors[FleaNumber % fleaColors.Count];
+        var sr = Body.GetComponentInChildren<SpriteRenderer>();
+        sr.color = fleaColors[FleaNumber % fleaColors.Count];
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
@@ -96,6 +98,22 @@ public class Flea : MonoBehaviour
         {
             rb.AddForce(Vector2.down * AddedFastFallGravity);
         }
+        if(frameInput.SpinJustPressed && !TouchingGround)
+        {
+            Debug.Log("Spin!");
+            LeanTween.cancel(Body);
+            Body.transform.rotation = Quaternion.identity;
+            LeanTween.rotateAroundLocal(Body, Vector3.forward, 360f, 0.2f).setEaseOutCubic();
+            var hits = Physics2D.OverlapCircleAll(transform.position, SpinCircleRadius);
+            foreach(var hit in hits)
+            {
+                var flea = hit.GetComponent<Flea>();
+                if (flea != null && flea != this)
+                {
+                    flea.GetBonked();
+                }
+            }
+        }
     }
 
     private void AddHorizontalDrag()
@@ -116,6 +134,11 @@ public class Flea : MonoBehaviour
         
     }
 
+    public void GetBonked()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, SpinHitUpForce);
+    }
+
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, JumpHeight);
@@ -124,5 +147,11 @@ public class Flea : MonoBehaviour
     private void Move(float moveAmount)
     {
         rb.AddForce(Vector3.right * moveAmount * MoveSpeed);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, SpinCircleRadius);
     }
 }

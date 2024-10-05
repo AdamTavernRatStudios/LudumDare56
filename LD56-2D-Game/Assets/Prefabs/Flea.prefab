@@ -136,11 +136,13 @@ MonoBehaviour:
   MoveSpeed: 50
   AddedFastFallGravity: 10
   HorizontalDragCoefficient: 0.05
+  SpinHitUpForce: 20
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
   FleaNumber: 0
   UseRecordedData: 0
+  SpinCircleRadius: 1.11
   fleaColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 0.8454399, b: 0, a: 1}
@@ -148,6 +150,7 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.873976, a: 1}
   - {r: 1, g: 0.37203765, b: 0, a: 1}
   - {r: 0.6278157, g: 0, b: 1, a: 1}
+  Body: {fileID: 1501685054702178763}
 --- !u!70 &3486902276095667148
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
