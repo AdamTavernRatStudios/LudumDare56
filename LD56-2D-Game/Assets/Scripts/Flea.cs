@@ -77,6 +77,7 @@ public class Flea : MonoBehaviour
     [HideInInspector]
     public bool InCircusItem => activeCircusItem != null;
     public CircusItem activeCircusItem = null;
+    public bool OnTightRope => activeCircusItem != null && activeCircusItem is TightRope;
     private void FixedUpdate()
     {
         if (UseRecordedData)
@@ -127,7 +128,7 @@ public class Flea : MonoBehaviour
     void HandleInputs(FrameInput frameInput)
     {
         Move(frameInput.MoveInput);
-        if (frameInput.JumpJustPressed && TouchingGround && !InCircusItem)
+        if (frameInput.JumpJustPressed && CanJump())
         {
             Jump();
         }
@@ -139,6 +140,22 @@ public class Flea : MonoBehaviour
         {
             DoTwirl();
         }
+    }
+
+    bool CanJump()
+    {
+        if (!TouchingGround)
+        {
+            return false;
+        }
+        if (InCircusItem)
+        {
+            if (!OnTightRope)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     float TimeOfLastTwirl = float.MinValue;
@@ -202,7 +219,12 @@ public class Flea : MonoBehaviour
 
     private void Move(float moveAmount)
     {
-        rb.AddForce(Vector3.right * moveAmount * MoveSpeed);
+        var moveSpeed = MoveSpeed;
+        if (OnTightRope)
+        {
+            moveSpeed /= 3f;
+        }
+        rb.AddForce(Vector3.right * moveAmount * moveSpeed);
     }
 
     private void OnDrawGizmosSelected()
