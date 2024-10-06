@@ -35,6 +35,7 @@ public class ScoreManager : MonoBehaviour
         SpinFlea = 4,
         GetSpunByFlea = 5,
         JumpThroughHoop = 6,
+        CannonBlast = 7,
     }
 
 
@@ -109,6 +110,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.SpinFlea: return 20;
             case TrickType.GetSpunByFlea: return 20;
             case TrickType.JumpThroughHoop: return 30;
+            case TrickType.CannonBlast: return 20;
             default: return 0;
         }
     }
@@ -123,6 +125,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.SpinFlea: return "Twirl a flea";
             case TrickType.GetSpunByFlea: return "Be twirled";
             case TrickType.JumpThroughHoop: return "Flaming hoop";
+            case TrickType.CannonBlast: return "Cannon";
             default: return "";
         }
     }

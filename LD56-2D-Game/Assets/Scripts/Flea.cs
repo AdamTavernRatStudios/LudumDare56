@@ -67,14 +67,14 @@ public class Flea : MonoBehaviour
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
+    public FrameInput currentFrameInput;
     private void FixedUpdate()
     {
-        FrameInput frameInput;
         if (UseRecordedData)
         {
             if(FixedUpdateCounter < RecordedInputs.Count)
             {
-                frameInput = GameManager.RecordedInputs[FleaNumber][FixedUpdateCounter];
+                currentFrameInput = GameManager.RecordedInputs[FleaNumber][FixedUpdateCounter];
             }
             else
             {
@@ -83,7 +83,7 @@ public class Flea : MonoBehaviour
         }
         else
         {
-            frameInput = new FrameInput()
+            currentFrameInput = new FrameInput()
             {
                 MoveInput = input.MoveInput,
                 JumpIsPressed = input.JumpIsPressed,
@@ -93,7 +93,7 @@ public class Flea : MonoBehaviour
                 SpinJustPressed = input.SpinJustPressed,
                 SpinJustReleased = input.SpinJustReleased,
             };
-            inputs.Add(frameInput);
+            inputs.Add(currentFrameInput);
         }
 
         var InAir = !TouchingGround;
@@ -103,7 +103,7 @@ public class Flea : MonoBehaviour
             DustJumpParticles.Emit(10);
         }
 
-        HandleInputs(frameInput);
+        HandleInputs(currentFrameInput);
 
         AddHorizontalDrag();
 
@@ -159,7 +159,8 @@ public class Flea : MonoBehaviour
 
     private void AddHorizontalDrag()
     {
-        var speed = rb.velocity.x;
+        if (DragDisabled) return;
+        var speed = Mathf.Abs(rb.velocity.x);
         // Calculate the drag force magnitude
         float dragForceMagnitude = 0.5f * HorizontalDragCoefficient * speed * speed;
 
@@ -168,6 +169,13 @@ public class Flea : MonoBehaviour
 
         // Apply the drag force to the Rigidbody
         rb.AddForce(dragForce, ForceMode2D.Force);
+    }
+
+    bool DragDisabled = false;
+    public void TempDisableDrag(float time)
+    {
+        DragDisabled = true;
+        LeanTween.value(gameObject, 0f, 1f, time).setOnComplete(() => DragDisabled = false);
     }
 
     public void GetBonked()
