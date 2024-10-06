@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    bool IsBonusPlatform = false;
+    public bool IsBonusPlatform = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Flea"))
@@ -13,7 +13,7 @@ public class Platform : MonoBehaviour
             {
                 if (IsBonusPlatform)
                 {
-                    ScoreManager.AddTrick(collision.gameObject.GetComponent<Flea>(), ScoreManager.TrickType.LandOnPlatform);
+                    ScoreManager.AddTrick(collision.gameObject.GetComponent<Flea>(), ScoreManager.TrickType.LandOnBonusPlatform);
                 }
                 else
                 {
