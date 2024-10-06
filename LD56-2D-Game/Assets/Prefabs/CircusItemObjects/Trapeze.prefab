@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 7549747195469498191}
   - component: {fileID: 5647237160401100046}
   m_Layer: 0
-  m_Name: Trapese
+  m_Name: Trapeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
