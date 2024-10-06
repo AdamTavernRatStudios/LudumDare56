@@ -2,6 +2,7 @@ using ExtensionMethods;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using static Rewired.ComponentControls.Effects.RotateAroundAxis;
@@ -51,6 +52,7 @@ public class Flea : MonoBehaviour
     public ParticleSystem DustJumpParticles;
 
     public Spotlight spotLight;
+    public static Flea ControlledFlea = null;
     public class FrameInput
     {
         public float MoveInput = 0f;
@@ -69,7 +71,11 @@ public class Flea : MonoBehaviour
         coll = GetComponent<Collider2D>();
         HatSpriteRenderer.color = FleaColor;
         GetComponentInChildren<TrailRenderer>().startColor = FleaColor;
-        spotLight.gameObject.SetActive(!UseRecordedData);
+        if (!UseRecordedData)
+        {
+            ControlledFlea = this;
+        }
+         // spotLight.gameObject.SetActive(!UseRecordedData);
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
