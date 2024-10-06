@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 440107351749595583}
   - component: {fileID: 3365848260112054545}
   - component: {fileID: 8558405823230484437}
-  - component: {fileID: 9206996423562580169}
+  - component: {fileID: 2746153933487602604}
   m_Layer: 0
   m_Name: PogoStick
   m_TagString: Untagged
@@ -265,7 +265,7 @@ MonoBehaviour:
   TriggerExit2D:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &9206996423562580169
+--- !u!95 &2746153933487602604
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
