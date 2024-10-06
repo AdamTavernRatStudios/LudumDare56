@@ -6,5 +6,8 @@ public class StartGame : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
-
+    public void LoadInstructions()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Instructions");
+    }
 }
