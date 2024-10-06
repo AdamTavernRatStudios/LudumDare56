@@ -89,6 +89,7 @@ public class ScoreManager : MonoBehaviour
         var tricksList = scoresDict[flea.FleaNumber];
         tricksList.Add(trickType);
         int PointsToScore = GetBaseScoreFromTrick(trickType);
+        int HeightBonus = (int)(flea.transform.position.y - Floor.FloorHeight) / 2;
         if(tricksList.Count >= 2)
         {
             // If the last two tricks were different add to the combo counter and add that to the total
@@ -101,16 +102,16 @@ public class ScoreManager : MonoBehaviour
                 flea.ComboCounter = 0;
             }
         }
-        CurrentRoundScore += PointsToScore + flea.ComboCounter;
+        CurrentRoundScore += (PointsToScore + HeightBonus) + flea.ComboCounter;
 
-        var message = GetTrickName(trickType) + "! +" + PointsToScore.ToString();
+        var message = GetTrickName(trickType) + "! +" + (PointsToScore + HeightBonus).ToString();
         if(flea.ComboCounter > 0)
         {
-            message += '\n' + "<size=60%>+" + flea.ComboCounter.ToString() + " combo!";
+            message += '\n' + "<size=60%>+" + flea.ComboCounter.ToString() + " combo!</size>";
         }
         EffectsManager.Instance.ShowTextPopup(flea, message, flea.FleaColor);
 
-        PointsAddedEvent.Invoke(PointsToScore + flea.ComboCounter);
+        PointsAddedEvent.Invoke((PointsToScore + HeightBonus) + flea.ComboCounter);
     }
 
     public int GetBaseScoreFromTrick(TrickType type)
