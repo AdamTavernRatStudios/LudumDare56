@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7f5a709b3784146820db1562ff900d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimePerDay: 60
+  TimePerDay: 30
   TimeElapsed: 0
   timerSlider: {fileID: 7088880220960394934}
 --- !u!1 &8921650387781016558
