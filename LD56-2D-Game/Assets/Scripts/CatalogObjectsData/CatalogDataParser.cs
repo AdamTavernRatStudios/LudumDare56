@@ -134,16 +134,15 @@ public class CatalogDataParser : Editor
     public static GameObject FindAndAssignPrefab(string prefabName)
     {
         // Get all prefab assets in the given folder path
-        string[] prefabGUIDs = AssetDatabase.FindAssets(prefabName, new[] { "Assets/Preabs/CircusItemObjects" });
+        string[] assetPaths = System.IO.Directory.GetFiles("Assets/Prefabs/CircusItemObjects", "*.prefab", SearchOption.AllDirectories);
+        // string[] prefabGUIDs = AssetDatabase.FindAssets(prefabName, new[] { "Assets/Preabs/CircusItemObjects" });
 
         // Loop through all found prefabs
-        foreach (string guid in prefabGUIDs)
+        foreach (string assetpath in assetPaths)
         {
-            // Get the full asset path from GUID
-            string assetPath = AssetDatabase.GUIDToAssetPath(guid);
 
             // Load the asset as a GameObject (prefab)
-            GameObject loadedPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(assetPath);
+            GameObject loadedPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(assetpath);
 
             // Check if the name of the loaded prefab matches the search name
             if (loadedPrefab != null && loadedPrefab.name == prefabName)
