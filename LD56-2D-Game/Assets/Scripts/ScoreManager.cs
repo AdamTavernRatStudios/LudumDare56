@@ -37,6 +37,7 @@ public class ScoreManager : MonoBehaviour
         JumpThroughHoop = 6,
         CannonBlast = 7,
         PogoStickBounce = 8,
+        TrampolineBounce = 9,
     }
 
 
@@ -113,6 +114,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.JumpThroughHoop: return 30;
             case TrickType.CannonBlast: return 20;
             case TrickType.PogoStickBounce: return 50;
+            case TrickType.TrampolineBounce: return 10;
             default: return 0;
         }
     }
@@ -129,6 +131,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.JumpThroughHoop: return "Flaming hoop";
             case TrickType.CannonBlast: return "Cannon";
             case TrickType.PogoStickBounce: return "Pogo";
+            case TrickType.TrampolineBounce: return "Trampoline";
             default: return "";
         }
     }

@@ -10,10 +10,12 @@ public class PogoStick : CircusItem
     public Rigidbody2D rb;
     public float BouncePower = 5f;
     public float MoveAmount = 1f;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         collisionListener.CollisionEnter2D.AddListener(HandleCollision);
+        anim = GetComponent<Animator>();
     }
 
     private void HandleCollision(Collision2D collision)
@@ -37,6 +39,7 @@ public class PogoStick : CircusItem
                 bp *= 2f;
             }
             rb.velocity = new Vector2(rb.velocity.x, bp);
+            anim.SetTrigger("Bounce");
         }
         if (Occupied)
         {

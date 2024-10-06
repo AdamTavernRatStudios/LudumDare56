@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 440107351749595583}
   - component: {fileID: 3365848260112054545}
   - component: {fileID: 8558405823230484437}
+  - component: {fileID: 9206996423562580169}
   m_Layer: 0
   m_Name: PogoStick
   m_TagString: Untagged
@@ -264,3 +265,24 @@ MonoBehaviour:
   TriggerExit2D:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &9206996423562580169
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5652123309685191490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 02de48455ae63b145ae46a3b94fbcb1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
