@@ -11,6 +11,8 @@ public class Flea : MonoBehaviour
     PlayerInput input;
     [HideInInspector]
     public Rigidbody2D rb;
+    [HideInInspector]
+    public Collider2D coll;
 
     public float JumpHeight = 10f;
     public float MoveSpeed = 10f;
@@ -62,12 +64,16 @@ public class Flea : MonoBehaviour
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         HatSpriteRenderer.color = FleaColor;
         GetComponentInChildren<TrailRenderer>().startColor = FleaColor;
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;
     public FrameInput currentFrameInput;
+    [HideInInspector]
+    public bool InCircusItem => activeCircusItem != null;
+    public CircusItem activeCircusItem = null;
     private void FixedUpdate()
     {
         if (UseRecordedData)
@@ -118,7 +124,7 @@ public class Flea : MonoBehaviour
     void HandleInputs(FrameInput frameInput)
     {
         Move(frameInput.MoveInput);
-        if (frameInput.JumpJustPressed && TouchingGround)
+        if (frameInput.JumpJustPressed && TouchingGround && !InCircusItem)
         {
             Jump();
         }

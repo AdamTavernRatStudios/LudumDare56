@@ -36,6 +36,7 @@ public class ScoreManager : MonoBehaviour
         GetSpunByFlea = 5,
         JumpThroughHoop = 6,
         CannonBlast = 7,
+        PogoStickBounce = 8,
     }
 
 
@@ -111,6 +112,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.GetSpunByFlea: return 20;
             case TrickType.JumpThroughHoop: return 30;
             case TrickType.CannonBlast: return 20;
+            case TrickType.PogoStickBounce: return 50;
             default: return 0;
         }
     }
@@ -126,6 +128,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.GetSpunByFlea: return "Be twirled";
             case TrickType.JumpThroughHoop: return "Flaming hoop";
             case TrickType.CannonBlast: return "Cannon";
+            case TrickType.PogoStickBounce: return "Pogo";
             default: return "";
         }
     }

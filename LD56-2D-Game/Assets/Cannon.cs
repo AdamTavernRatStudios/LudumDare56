@@ -16,37 +16,29 @@ public class Cannon : CircusItem
         collisionListener.TriggerEnter2D.AddListener(HandleTriggerEnter);
     }
 
-    bool BlastJustHappened = false;
     private void HandleTriggerEnter(Collider2D arg0)
     {
-        if (Occupied || BlastJustHappened)
+        if (Occupied)
         {
             return;
         }
         var flea = arg0.GetComponent<Flea>();
-        AddPlayer(flea);
+        TryAddPlayer(flea);
         if (Occupied)
         {
             anim.SetTrigger("Aim");
+            DoInteractionOnDelay(5);
         }
-        StartCoroutine(DoInteractionRoutine(5));
     }
 
     public override void DoInteraction()
     {
         anim.SetTrigger("Blast");
-        BlastJustHappened = true;
         PS.Emit(20);
         var f = RemovePlayer();
         f.transform.position = BlastPoint.transform.position;
         f.rb.velocity = (BlastPoint.transform.up * BlastPower);
         f.TempDisableDrag(0.5f);
         ScoreManager.AddTrick(f, ScoreManager.TrickType.CannonBlast);
-        StopAllCoroutines();
-    }
-
-    public void ResetBlast()
-    {
-        BlastJustHappened = false;
     }
 }
