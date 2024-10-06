@@ -83,7 +83,8 @@ public class Flea : MonoBehaviour
     [HideInInspector]
     public bool InCircusItem => activeCircusItem != null;
     public CircusItem activeCircusItem = null;
-    public bool OnTightRope => activeCircusItem != null && activeCircusItem is TightRope;
+    public bool OnJumpableObject => activeCircusItem != null &&
+        (activeCircusItem is TightRope || activeCircusItem is Globe);
     private void FixedUpdate()
     {
         if (UseRecordedData)
@@ -150,13 +151,17 @@ public class Flea : MonoBehaviour
 
     bool CanJump()
     {
+        if(activeCircusItem != null && activeCircusItem is Globe)
+        {
+            return true;
+        }
         if (!TouchingGround)
         {
             return false;
         }
         if (InCircusItem)
         {
-            if (!OnTightRope)
+            if (!OnJumpableObject)
             {
                 return false;
             }
@@ -226,7 +231,7 @@ public class Flea : MonoBehaviour
     private void Move(float moveAmount)
     {
         var moveSpeed = MoveSpeed;
-        if (OnTightRope)
+        if (activeCircusItem != null && activeCircusItem is TightRope)
         {
             moveSpeed /= 3f;
         }

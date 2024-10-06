@@ -8,6 +8,7 @@ public class CircusItem : MonoBehaviour
     public Flea flea;
     public bool HidePlayerWhenOccupied = false;
     public bool MakePlayerKinematic = false;
+    public float ResetTime = 0.5f;
 
     bool Resetting = false;
     public bool TryAddPlayer(Flea f)
@@ -49,8 +50,11 @@ public class CircusItem : MonoBehaviour
         }
         flea.activeCircusItem = null;
         flea = null;
-        StopCoroutine(interactionRoutine);
-        StartCoroutine(ResetCouroutine(0.5f));
+        if(interactionRoutine != null)
+        {
+            StopCoroutine(interactionRoutine);
+        }
+        StartCoroutine(ResetCouroutine(ResetTime));
         return temp;
     }
 
