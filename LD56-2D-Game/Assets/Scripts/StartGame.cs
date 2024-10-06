@@ -10,4 +10,8 @@ public class StartGame : MonoBehaviour
     {
         LevelLoader.Instance.LoadLevel("Instructions");
     }
+    public void LoadMainMenu()
+    {
+        LevelLoader.Instance.LoadLevel(levelName: "TitleScreen");
+    }
 }
