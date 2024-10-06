@@ -23,8 +23,7 @@ public class Cannon : CircusItem
             return;
         }
         var flea = arg0.GetComponent<Flea>();
-        TryAddPlayer(flea);
-        if (Occupied)
+        if(TryAddPlayer(flea))
         {
             anim.SetTrigger("Aim");
             DoInteractionOnDelay(5);

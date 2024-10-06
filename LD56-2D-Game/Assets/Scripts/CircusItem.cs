@@ -10,7 +10,7 @@ public class CircusItem : MonoBehaviour
     public bool MakePlayerKinematic = false;
 
     bool Resetting = false;
-    public void TryAddPlayer(Flea f)
+    public bool TryAddPlayer(Flea f)
     {
         if (f != null && !f.InCircusItem && !Resetting)
         {
@@ -27,7 +27,9 @@ public class CircusItem : MonoBehaviour
                 flea.rb.isKinematic = true;
                 flea.coll.enabled = false;
             }
+            return true;
         }
+        return false;
     }
 
     public Flea RemovePlayer()
@@ -48,7 +50,7 @@ public class CircusItem : MonoBehaviour
         flea.activeCircusItem = null;
         flea = null;
         StopCoroutine(interactionRoutine);
-        StartCoroutine(ResetCouroutine(1.5f));
+        StartCoroutine(ResetCouroutine(0.5f));
         return temp;
     }
 

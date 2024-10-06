@@ -20,10 +20,9 @@ public class PogoStick : CircusItem
 
     private void HandleCollision(Collision2D collision)
     {
-        if (!Occupied)
+        var f = collision.gameObject.GetComponent<Flea>();
+        if (TryAddPlayer(f))
         {
-            var f = collision.gameObject.GetComponent<Flea>();
-            TryAddPlayer(f);
             DoInteractionOnDelay(7);
         }
         Bounce(collision.relativeVelocity.y);
