@@ -12,6 +12,7 @@ public class LevelLoader : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(this.gameObject);
         }
         else
