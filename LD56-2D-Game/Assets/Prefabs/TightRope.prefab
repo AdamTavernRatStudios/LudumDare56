@@ -130,7 +130,7 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 0
-    textureScale: {x: 1, y: 1}
+    textureScale: {x: 1, y: -1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 3944467519493198157}
   LeftPole: {fileID: 6501009208491800366}
   RightPole: {fileID: 1855542239797527482}
+  DistanceWalkedPerTrick: 3
 --- !u!95 &9129444273146220416
 Animator:
   serializedVersion: 5
