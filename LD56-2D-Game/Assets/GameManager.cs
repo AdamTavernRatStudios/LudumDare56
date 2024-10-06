@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int Day = 0;
     public UnityEvent RoundEnded = new();
     public UnityEvent RoundStarted = new();
+
+    public Transform SpotlightSource = null;
     void Awake()
     {
         if (Instance == null)

@@ -49,6 +49,8 @@ public class Flea : MonoBehaviour
 
     public ParticleSystem SpinParticles;
     public ParticleSystem DustJumpParticles;
+
+    public Spotlight spotLight;
     public class FrameInput
     {
         public float MoveInput = 0f;
@@ -67,6 +69,7 @@ public class Flea : MonoBehaviour
         coll = GetComponent<Collider2D>();
         HatSpriteRenderer.color = FleaColor;
         GetComponentInChildren<TrailRenderer>().startColor = FleaColor;
+        spotLight.gameObject.SetActive(!UseRecordedData);
     }
     public List<FrameInput> RecordedInputs => FleaNumber < GameManager.RecordedInputs.Count ? GameManager.RecordedInputs[FleaNumber] : null;
     int FixedUpdateCounter = 0;

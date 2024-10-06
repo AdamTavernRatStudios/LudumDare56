@@ -31,13 +31,24 @@ public class ScoreManager : MonoBehaviour
         UNKNOWN = 0,
         Jump = 1,
         Spin = 2,
-        LandOnPlatform = 3,
-        SpinFlea = 4,
-        GetSpunByFlea = 5,
-        JumpThroughHoop = 6,
-        CannonBlast = 7,
-        PogoStickBounce = 8,
-        TrampolineBounce = 9,
+        SpinFlea = 3,
+        GetSpunByFlea = 4,
+        LandOnPlatform = 5,
+        LandOnBonusPlatform = 6,
+        JumpThroughHoop = 7,
+        EnterCannon = 12,
+        CannonBlast = 8,
+        PogoStickBounce = 9,
+        TrampolineBounce = 10,
+        GrabTrapese = 11,
+        ExitTrapese = 13,
+        EnterTightRope = 14,
+        WalkOnTightRope = 15,
+        ExitTightRope = 16,
+        EnterGlobe = 17,
+        WalkOnGlobe = 18,
+        ExitGlobe = 19,
+        BubbleBounce = 20,
     }
 
 
@@ -115,6 +126,17 @@ public class ScoreManager : MonoBehaviour
             case TrickType.CannonBlast: return 20;
             case TrickType.PogoStickBounce: return 50;
             case TrickType.TrampolineBounce: return 10;
+            case TrickType.LandOnBonusPlatform:  return 25;
+            case TrickType.EnterCannon:  return 5;
+            case TrickType.GrabTrapese:  return 20;
+            case TrickType.ExitTrapese:  return 20;
+            case TrickType.EnterTightRope:  return 5;
+            case TrickType.WalkOnTightRope:  return 15;
+            case TrickType.ExitTightRope:  return 5;
+            case TrickType.EnterGlobe:  return 5;
+            case TrickType.WalkOnGlobe:  return 15;
+            case TrickType.ExitGlobe:  return 5;
+            case TrickType.BubbleBounce:  return 10;
             default: return 0;
         }
     }
@@ -132,6 +154,17 @@ public class ScoreManager : MonoBehaviour
             case TrickType.CannonBlast: return "Cannon";
             case TrickType.PogoStickBounce: return "Pogo";
             case TrickType.TrampolineBounce: return "Trampoline";
+            case TrickType.LandOnBonusPlatform: return "Stuck landing";
+            case TrickType.EnterCannon: return "Enter cannon";
+            case TrickType.GrabTrapese: return "Trapese grab";
+            case TrickType.ExitTrapese: return "Trapese jump";
+            case TrickType.EnterTightRope: return "Land on tightrope";
+            case TrickType.WalkOnTightRope: return "Balance";
+            case TrickType.ExitTightRope: return "Jump from tightrope";
+            case TrickType.EnterGlobe: return "Land on globe";
+            case TrickType.WalkOnGlobe: return "Balance on globe";
+            case TrickType.ExitGlobe: return "Jump off globe";
+            case TrickType.BubbleBounce: return "Bubble bounce";
             default: return "";
         }
     }
