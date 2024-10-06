@@ -12,6 +12,6 @@ public class StartGame : MonoBehaviour
     }
     public void LoadMainMenu()
     {
-        LevelLoader.Instance.LoadLevel(levelName: "TitleScreen");
+        LevelLoader.Instance.LoadLevel("TitleScreen");
     }
 }
