@@ -1027,8 +1027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 32.43241, y: 44.217}
-  m_SizeDelta: {x: 307.5808, y: 138.43}
+  m_AnchoredPosition: {x: 34.3134, y: 44.217}
+  m_SizeDelta: {x: 311.3429, y: 138.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534951995
 MonoBehaviour:
@@ -1051,14 +1051,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Welcome to The Flea Circus! I, Flea T. Barnum, am needing your help to
-    get our flea talent ready for showtime. \n\nYou must work with each flea to help
-    choreograph a jaw-dropping routine that is sure to wow the audience. Satisying
-    an audience means you get to take a trip to the local Flea Market where you can
-    buy upgrades to boost your performance. Keep adding fleas until the audience
-    says \"Unbefleable\". \n\n<b>Controls: </b>\nMove\n\n\nJump\n\n\nSpin\n"
+    get our flea talent ready for showtime. \n\nYou must work with each of our 6
+    flea performers to help choreograph a jaw-dropping routine that is sure to wow
+    the audience. Earn money during performances to purchase upgrades at the Flea
+    Market. Keep adding fleas until the audience says \"Unbe-flea-able\". \n\n<b>Controls:
+    </b>\nMove\n\n\nJump\n\n\nSpin\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f85d0a490bf12004c8254adbd2afbd09, type: 2}
-  m_sharedMaterial: {fileID: -8347470858205952596, guid: f85d0a490bf12004c8254adbd2afbd09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8e0d6b9f932d7f84fb41352c8cb8a9e0, type: 2}
+  m_sharedMaterial: {fileID: 289936509925011534, guid: 8e0d6b9f932d7f84fb41352c8cb8a9e0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1082,8 +1082,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
