@@ -81,8 +81,7 @@ MonoBehaviour:
     Cost: 400
     ObjectPrefab: {fileID: 3319610960638802034, guid: 76dbb4ba8b4aad44ca3736aba842b666, type: 3}
   - ObjectName: Bubble Blower
-    Description: Jump on top of the bubble blower on a standard platform to activate.
-      Hop on top of the bubbles for extra height
+    Description: Jump on top of the bubble blower on a standard platform to activate
     TentColor: 5D5B3B
     sprite: {fileID: 21300000, guid: 9eb9098f64d97974a9e71c29b474b0dd, type: 3}
     objectType: 2
