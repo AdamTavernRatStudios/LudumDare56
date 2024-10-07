@@ -146,22 +146,22 @@ public class ScoreManager : MonoBehaviour
             case TrickType.Spin: return 10;
             case TrickType.LandOnPlatform: return 15;
             case TrickType.SpinFlea: return 20;
-            case TrickType.GetSpunByFlea: return 20;
+            case TrickType.GetSpunByFlea: return 50;
             case TrickType.JumpThroughHoop: return 30;
             case TrickType.CannonBlast: return 20;
-            case TrickType.PogoStickBounce: return 15;
+            case TrickType.PogoStickBounce: return 20;
             case TrickType.TrampolineBounce: return 10;
             case TrickType.LandOnBonusPlatform:  return 25;
             case TrickType.EnterCannon:  return 5;
-            case TrickType.GrabTrapese:  return 30;
-            case TrickType.ExitTrapese:  return 30;
-            case TrickType.EnterTightRope:  return 5;
-            case TrickType.WalkOnTightRope:  return 30;
-            case TrickType.ExitTightRope:  return 5;
+            case TrickType.GrabTrapese:  return 35;
+            case TrickType.ExitTrapese:  return 35;
+            case TrickType.EnterTightRope:  return 20;
+            case TrickType.WalkOnTightRope:  return 100;
+            case TrickType.ExitTightRope:  return 20;
             case TrickType.EnterGlobe:  return 5;
-            case TrickType.WalkOnGlobe:  return 15;
+            case TrickType.WalkOnGlobe:  return 20;
             case TrickType.ExitGlobe:  return 5;
-            case TrickType.BubbleBounce:  return 15;
+            case TrickType.BubbleBounce:  return 40;
             default: return 0;
         }
     }
