@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class NewDayPanel : MonoBehaviour
 {
-    public CanvasGroup canvasGroup;
     public Button StartButton;
     public TextMeshProUGUI buttonText;
     Animator anim;
@@ -51,7 +50,6 @@ public class NewDayPanel : MonoBehaviour
         StartButton.interactable = false;
         LeanTween.value(1f, 0f, 0.5f).setOnComplete(() =>
         {
-            canvasGroup.blocksRaycasts = true;
             GameManager.Instance.StartNewRound();
         });
     }

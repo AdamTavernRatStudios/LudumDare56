@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 4354345082386898453}
   - component: {fileID: 2129239376470649862}
   - component: {fileID: 7804330143516719243}
-  - component: {fileID: 6620121435315503477}
   - component: {fileID: 4651122802721631314}
   m_Layer: 5
   m_Name: NewDayPanel
@@ -184,23 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdec515971bcde84e908ba9f23e1c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 6620121435315503477}
+  canvasGroup: {fileID: 0}
   StartButton: {fileID: 48210483118103347}
   buttonText: {fileID: 7479719887801341785}
   MoneyText: {fileID: 1845920435944668996}
   FinalScoreText: {fileID: 881629042364822785}
---- !u!225 &6620121435315503477
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1356847168214849407}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!95 &4651122802721631314
 Animator:
   serializedVersion: 5
