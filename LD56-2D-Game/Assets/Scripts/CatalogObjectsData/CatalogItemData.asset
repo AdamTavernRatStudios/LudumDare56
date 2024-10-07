@@ -25,14 +25,14 @@ MonoBehaviour:
     TentColor: 6F313F
     sprite: {fileID: 21300000, guid: d74c7ea8d366539498e8618fd916688c, type: 3}
     objectType: 1
-    Cost: 10
+    Cost: 50
     ObjectPrefab: {fileID: 4509698131780900435, guid: 44713175500276f44a9a4bab80021ac3, type: 3}
   - ObjectName: Flaming Hoop
     Description: Jump through the flaming hoop for extra points
     TentColor: 453964
     sprite: {fileID: 21300000, guid: 83b1723be417f46498ed2ab558bfd24b, type: 3}
     objectType: 3
-    Cost: 20
+    Cost: 50
     ObjectPrefab: {fileID: 637458514185625805, guid: 49d2efc3ed4e7e44a87287daeef3186d, type: 3}
   - ObjectName: Rolling Globe
     Description: Hop on the rolling globe from a standard platform and move slowly
@@ -55,7 +55,7 @@ MonoBehaviour:
     TentColor: 6F313F
     sprite: {fileID: 21300000, guid: cbe5f730dfb0b9d498d7247fb7ceee0e, type: 3}
     objectType: 1
-    Cost: 70
+    Cost: 100
     ObjectPrefab: {fileID: 3973599477710622119, guid: fa70d9036987c3742a6947568a674e01, type: 3}
   - ObjectName: Cannon
     Description: Hop in the cannon on a standard platform to be blasted across the
@@ -78,7 +78,7 @@ MonoBehaviour:
     TentColor: 453964
     sprite: {fileID: 21300000, guid: e64d29f656622f94194d7ab7f33d9ba6, type: 3}
     objectType: 3
-    Cost: 400
+    Cost: 500
     ObjectPrefab: {fileID: 3319610960638802034, guid: 76dbb4ba8b4aad44ca3736aba842b666, type: 3}
   - ObjectName: Bubble Blower
     Description: Jump on top of the bubble blower on a standard platform to activate
