@@ -27,8 +27,8 @@ public class NewDayPanel : MonoBehaviour
         RewiredEventSystem.current.SetSelectedGameObject(StartButton.gameObject);
         buttonText.text = "Start day: " + (GameManager.Instance.Day+1).ToString();
         MoneyText.text = "$" + ScoreManager.Instance.TotalMoney.ToString();
-    
-        ScoreManager.Instance.TotalMoney += ScoreManager.Instance.CurrentRoundScore / 10;
+
+        ScoreManager.Instance.TotalMoney += ScoreManager.Instance.GetMoneyEarned;
     }
 
     public void StartRound()

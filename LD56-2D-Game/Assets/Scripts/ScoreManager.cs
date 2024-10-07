@@ -23,6 +23,7 @@ public class ScoreManager : MonoBehaviour
             MoneyChanged.Invoke(oldVal, _TotalMoney);
         }
     }
+    public int GetMoneyEarned => CurrentRoundScore / 10;
     public UnityEvent<int, int> MoneyChanged;
 
     public static UnityEvent<int> PointsAddedEvent = new UnityEvent<int>();
