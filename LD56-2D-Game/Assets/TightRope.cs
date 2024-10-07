@@ -78,18 +78,18 @@ public class TightRope : CircusItem
         {
             lineRenderer.SetPositions(new Vector3[]
             {
-                new Vector3(LeftPole.transform.position.x, transform.position.y, 0),
-                new Vector3((LeftPole.transform.position.x + RightPole.transform.position.x) / 2, collisionListener.transform.position.y, 0),
-                new Vector3(RightPole.transform.position.x, transform.position.y, 0)
+                new Vector3(LeftPole.transform.position.x, lineRenderer.transform.position.y, 0),
+                new Vector3((LeftPole.transform.position.x + RightPole.transform.position.x) / 2, lineRenderer.transform.position.y, 0),
+                new Vector3(RightPole.transform.position.x, lineRenderer.transform.position.y, 0)
             });
         }
         else
         {
             lineRenderer.SetPositions(new Vector3[]
             {
-                new Vector3(LeftPole.transform.position.x, transform.position.y, 0),
+                new Vector3(LeftPole.transform.position.x, lineRenderer.transform.position.y, 0),
                 new Vector3(flea.transform.position.x, collisionListener.transform.position.y, 0),
-                new Vector3(RightPole.transform.position.x, transform.position.y, 0)
+                new Vector3(RightPole.transform.position.x, lineRenderer.transform.position.y, 0)
             });
             DistanceTraveled += Vector3.Distance(flea.transform.position, PrevPos);
             PrevPos = flea.transform.position;
