@@ -15,7 +15,7 @@ public class MusicPlayer : MonoBehaviour
     public void PlayMainMenuMusic(){
         PlayMusic(MainMenuMusic);
         }
-    public void PlayBuildMenuMusic(){
+    public void PlayBuildMenuMusic(){ 
         PlayMusic(BuildMenuMusic);
             }
     public void PlayFightMusic()
@@ -82,7 +82,7 @@ public class MusicPlayer : MonoBehaviour
             SourceB.volume = 0f;
             SourceB.Stop();
             SourceB.Play();
-            SwitchSources(SourceA, SourceB);
+            SwitchSources(SourceA, SourceB, clip);
         }
         else if (SourceB.isPlaying)
         {
@@ -90,7 +90,7 @@ public class MusicPlayer : MonoBehaviour
             SourceC.volume = 0f;
             SourceC.Stop();
             SourceC.Play();
-            SwitchSources(SourceB, SourceC);
+            SwitchSources(SourceB, SourceC, clip);
         }
         else
         {
@@ -98,12 +98,14 @@ public class MusicPlayer : MonoBehaviour
             SourceA.volume = 0f;
             SourceA.Stop();
             SourceA.Play();
-            SwitchSources(SourceC, SourceA);
+            SwitchSources(SourceC, SourceA, clip);
         }
     }
 
-    void SwitchSources(AudioSource TurnMeOff, AudioSource TurnMeOn)
+    void SwitchSources(AudioSource TurnMeOff, AudioSource TurnMeOn, AudioClip c = null)
     {
+        float v = 1f;
+        if (c == FightMusic) v = 0.4f;
         LeanTween.value(0f, 1f, 0.25f).setOnUpdate((float f) =>
         {
             TurnMeOff.volume = 1 - f;
@@ -111,7 +113,7 @@ public class MusicPlayer : MonoBehaviour
         }).setOnComplete(() =>
         {
             TurnMeOff.volume = 0f;
-            TurnMeOn.volume = 1f;
+            TurnMeOn.volume = v;
             TurnMeOff.Stop();
         });
     }

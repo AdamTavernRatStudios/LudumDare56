@@ -50,9 +50,9 @@ MonoBehaviour:
   SourceA: {fileID: 908772199244191123}
   SourceB: {fileID: 8121225478009688859}
   SourceC: {fileID: 2717431665074280283}
-  MainMenuMusic: {fileID: 8300000, guid: eec64592aae984b29906247f5b95e27f, type: 3}
-  BuildMenuMusic: {fileID: 8300000, guid: eec64592aae984b29906247f5b95e27f, type: 3}
-  FightMusic: {fileID: 8300000, guid: eec64592aae984b29906247f5b95e27f, type: 3}
+  MainMenuMusic: {fileID: 8300000, guid: 70c17df30fd224ee2879fd0beb5d7dee, type: 3}
+  BuildMenuMusic: {fileID: 8300000, guid: 8cbb3834b3f314d0895b49b3bcc8935b, type: 3}
+  FightMusic: {fileID: 8300000, guid: acbdacdd833df43a9a9622c41fe58733, type: 3}
 --- !u!82 &908772199244191123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 36be5ef62c34be74595fb7c66fca8080, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.514
   m_Pitch: 1
   Loop: 1
   Mute: 0

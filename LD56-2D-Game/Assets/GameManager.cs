@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MusicPlayer.Instance.PlayBuildMenuMusic();
         RecordedInputs.Clear();
         EndRound();
     }
@@ -78,13 +79,14 @@ public class GameManager : MonoBehaviour
     public void EndRound()
     {
         if (!DayIsOccuring) return;
-
+        MusicPlayer.Instance.PlayBuildMenuMusic();
         DayIsOccuring = false;
         StopCurrentFleas();
         RoundEnded.Invoke();
     }
     public void StartNewRound()
     {
+        MusicPlayer.Instance.PlayFightMusic();
         if (DayIsOccuring) return;
 
         if(Day >= 6)

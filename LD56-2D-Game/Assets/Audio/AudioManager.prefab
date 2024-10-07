@@ -49,16 +49,16 @@ MonoBehaviour:
   MusicMixer: {fileID: 24300002, guid: 36be5ef62c34be74595fb7c66fca8080, type: 2}
   musicPlayer: {fileID: 0}
   SceneMusics:
-  - SceneName: Title Screen
-    Music: {fileID: 8300000, guid: 9d5cd1af43f204b8282a9a6cc856558e, type: 3}
+  - SceneName: TitleScreen
+    Music: {fileID: 8300000, guid: 70c17df30fd224ee2879fd0beb5d7dee, type: 3}
     MusicLayer2: {fileID: 0}
     MusicLayer3: {fileID: 0}
   - SceneName: Game
-    Music: {fileID: 8300000, guid: eec64592aae984b29906247f5b95e27f, type: 3}
+    Music: {fileID: 0}
     MusicLayer2: {fileID: 0}
     MusicLayer3: {fileID: 0}
   - SceneName: Instructions
-    Music: {fileID: 8300000, guid: df1d5366e625a954b982a35abba65e42, type: 3}
+    Music: {fileID: 8300000, guid: 8cbb3834b3f314d0895b49b3bcc8935b, type: 3}
     MusicLayer2: {fileID: 0}
     MusicLayer3: {fileID: 0}
   BossDefeatMusic: {fileID: 0}
