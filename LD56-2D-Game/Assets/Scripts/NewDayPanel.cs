@@ -46,11 +46,22 @@ public class NewDayPanel : MonoBehaviour
 
     public void StartRound()
     {
-        anim.SetTrigger("Exit");
-        StartButton.interactable = false;
-        LeanTween.value(1f, 0f, 0.5f).setOnComplete(() =>
+        if (GameManager.Instance.Day < 6)
         {
-            GameManager.Instance.StartNewRound();
-        });
+            anim.SetTrigger("Exit");
+            StartButton.interactable = false;
+            LeanTween.value(1f, 0f, 0.5f).setOnComplete(() =>
+            {
+                GameManager.Instance.StartNewRound();
+            });
+        }
+        else
+        {
+            anim.SetTrigger("ExitFinal");
+            LeanTween.value(1f, 0f, 1.0f).setOnComplete(() =>
+            {
+                GameManager.Instance.StartNewRound();
+            });
+        }
     }
 }
