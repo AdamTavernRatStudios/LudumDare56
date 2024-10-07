@@ -183,7 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdec515971bcde84e908ba9f23e1c11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 0}
   StartButton: {fileID: 48210483118103347}
   buttonText: {fileID: 7479719887801341785}
   MoneyText: {fileID: 1845920435944668996}
@@ -353,6 +352,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 613992055657570114, guid: d6f642c926e220a4682aeec6ab77524a, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 613992055657570114, guid: d6f642c926e220a4682aeec6ab77524a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 613992055657570114, guid: d6f642c926e220a4682aeec6ab77524a, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3003177806727787573, guid: d6f642c926e220a4682aeec6ab77524a, type: 3}
