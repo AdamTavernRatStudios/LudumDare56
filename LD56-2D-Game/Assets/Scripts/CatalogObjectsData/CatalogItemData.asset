@@ -13,51 +13,13 @@ MonoBehaviour:
   m_Name: CatalogItemData
   m_EditorClassIdentifier: 
   data:
-  - ObjectName: Flaming Hoop
-    Description: Jump through the flaming hoop for extra points
-    TentColor: 453964
-    sprite: {fileID: 21300000, guid: 575f7ef865f4345a3853ba549afe4194, type: 3}
-    objectType: 3
-    Cost: 10
-    ObjectPrefab: {fileID: 637458514185625805, guid: 49d2efc3ed4e7e44a87287daeef3186d, type: 3}
-  - ObjectName: Cannon
-    Description: Hop in the cannon on a standard platform to be blasted across the
-      stage
-    TentColor: 5D5B3B
-    sprite: {fileID: 21300000, guid: 5eb652e489a1845e597e8299fd7dca11, type: 3}
-    objectType: 2
-    Cost: 10
-    ObjectPrefab: {fileID: 8146429654335061936, guid: ac75b1c69f116194dbc52be147f63e9d, type: 3}
-  - ObjectName: Trapeze
-    Description: Catch the trapeze between platforms to catch some extra air and
-      points
-    TentColor: 453964
-    sprite: {fileID: 21300000, guid: f4b5356011ad14c30b1a59979a79d917, type: 3}
-    objectType: 3
-    Cost: 10
-    ObjectPrefab: {fileID: 6115846477770013937, guid: 084dd6681d46850449d91e9557cae05a, type: 3}
-  - ObjectName: Pogo Stick
-    Description: Pick the pogo stick up off a standard platform and bounce around
-      the stage
-    TentColor: 5D5B3B
-    sprite: {fileID: 21300000, guid: 75cdd423a63f342f7b8d96d05fe49e34, type: 3}
-    objectType: 2
-    Cost: 10
-    ObjectPrefab: {fileID: 5652123309685191490, guid: 0dcfe9da5eaac274a96aeef380224753, type: 3}
-  - ObjectName: Tightrope
-    Description: Move slowly across the tightrope between platforms and wow the audience
-    TentColor: 453964
-    sprite: {fileID: 21300000, guid: 9ea9685a90a8b4d459e40ca22cd67cef, type: 3}
-    objectType: 3
-    Cost: 10
-    ObjectPrefab: {fileID: 3319610960638802034, guid: 76dbb4ba8b4aad44ca3736aba842b666, type: 3}
-  - ObjectName: Trampoline
-    Description: Replace your base platform with a trampoline for extra height
+  - ObjectName: Standard Platform
+    Description: Sometimes simple is better. Downgrade back to a standard platform
     TentColor: 6F313F
-    sprite: {fileID: 21300000, guid: feb9958c0c20549c4b0297b87c320849, type: 3}
+    sprite: {fileID: 21300000, guid: db3fde0883b2e4858aca2faa303e571a, type: 3}
     objectType: 1
-    Cost: 10
-    ObjectPrefab: {fileID: 3973599477710622119, guid: fa70d9036987c3742a6947568a674e01, type: 3}
+    Cost: 0
+    ObjectPrefab: {fileID: 4509698131780900435, guid: 635aa75644c78a347b08affe1f90732f, type: 3}
   - ObjectName: Platforms with LIGHTS
     Description: Upgrade your platforms with lights for a bonus points
     TentColor: 6F313F
@@ -65,26 +27,64 @@ MonoBehaviour:
     objectType: 1
     Cost: 10
     ObjectPrefab: {fileID: 4509698131780900435, guid: 44713175500276f44a9a4bab80021ac3, type: 3}
+  - ObjectName: Flaming Hoop
+    Description: Jump through the flaming hoop for extra points
+    TentColor: 453964
+    sprite: {fileID: 21300000, guid: 575f7ef865f4345a3853ba549afe4194, type: 3}
+    objectType: 3
+    Cost: 20
+    ObjectPrefab: {fileID: 637458514185625805, guid: 49d2efc3ed4e7e44a87287daeef3186d, type: 3}
   - ObjectName: Rolling Globe
     Description: Hop on the rolling globe from a standard platform and move slowly
       to keep your balance
     TentColor: 5D5B3B
     sprite: {fileID: 21300000, guid: 2a7cc66933e084f2f9dba32f2b783dc6, type: 3}
     objectType: 2
-    Cost: 10
+    Cost: 30
     ObjectPrefab: {fileID: 4535870022824300855, guid: 0c8a249a5a61b3346ac26fa5ecc5935a, type: 3}
-  - ObjectName: Standard Platform
-    Description: Sometimes simple is better. Downgrade back to a standard platform
+  - ObjectName: Pogo Stick
+    Description: Pick the pogo stick up off a standard platform and bounce around
+      the stage
+    TentColor: 5D5B3B
+    sprite: {fileID: 21300000, guid: 75cdd423a63f342f7b8d96d05fe49e34, type: 3}
+    objectType: 2
+    Cost: 30
+    ObjectPrefab: {fileID: 5652123309685191490, guid: 0dcfe9da5eaac274a96aeef380224753, type: 3}
+  - ObjectName: Trampoline
+    Description: Replace your base platform with a trampoline for extra height
     TentColor: 6F313F
-    sprite: {fileID: 21300000, guid: db3fde0883b2e4858aca2faa303e571a, type: 3}
+    sprite: {fileID: 21300000, guid: feb9958c0c20549c4b0297b87c320849, type: 3}
     objectType: 1
-    Cost: 10
-    ObjectPrefab: {fileID: 4509698131780900435, guid: 635aa75644c78a347b08affe1f90732f, type: 3}
+    Cost: 50
+    ObjectPrefab: {fileID: 3973599477710622119, guid: fa70d9036987c3742a6947568a674e01, type: 3}
+  - ObjectName: Cannon
+    Description: Hop in the cannon on a standard platform to be blasted across the
+      stage
+    TentColor: 5D5B3B
+    sprite: {fileID: 21300000, guid: 5eb652e489a1845e597e8299fd7dca11, type: 3}
+    objectType: 2
+    Cost: 100
+    ObjectPrefab: {fileID: 8146429654335061936, guid: ac75b1c69f116194dbc52be147f63e9d, type: 3}
+  - ObjectName: Trapeze
+    Description: Catch the trapeze between platforms to catch some extra air and
+      points
+    TentColor: 453964
+    sprite: {fileID: 21300000, guid: f4b5356011ad14c30b1a59979a79d917, type: 3}
+    objectType: 3
+    Cost: 150
+    ObjectPrefab: {fileID: 6115846477770013937, guid: 084dd6681d46850449d91e9557cae05a, type: 3}
+  - ObjectName: Tightrope
+    Description: Move slowly across the tightrope between platforms and wow the audience
+    TentColor: 453964
+    sprite: {fileID: 21300000, guid: 9ea9685a90a8b4d459e40ca22cd67cef, type: 3}
+    objectType: 3
+    Cost: 200
+    ObjectPrefab: {fileID: 3319610960638802034, guid: 76dbb4ba8b4aad44ca3736aba842b666, type: 3}
   - ObjectName: Bubble Blower
     Description: Jump on top of the bubble blower on a standard platform to activate.
       Hop on top of the bubbles for extra height
     TentColor: 5D5B3B
     sprite: {fileID: 21300000, guid: 6714586d25950472e80eb795815a9ca7, type: 3}
     objectType: 2
-    Cost: 10
+    Cost: 250
     ObjectPrefab: {fileID: 131676633445005701, guid: 2aa6be6b5f9f79540809a4da0db99088, type: 3}
