@@ -8,4 +8,4 @@ Trampoline	Trampoline	Platform	Replace your base platform with a trampoline for 
 Cannon	Cannon	On Standard Platform	Hop in the cannon on a standard platform to be blasted across the stage	5D5B3B	Shop_Cannon	150
 Trapeze 	Trapeze	Between Platforms	Catch the trapeze between platforms to catch some extra air and points	453964	Shop_Trapeze	300
 Tightrope	TightRope	Between Platforms	Move slowly across the tightrope between platforms and wow the audience	453964	Shop_TightRope	400
-Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate. Hop on top of the bubbles for extra height	5D5B3B	Shop_BubbleBlower	400
+Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate	5D5B3B	Shop_BubbleBlower	400
