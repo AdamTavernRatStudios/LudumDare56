@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worldObject: {fileID: 0}
-  AdditionalOffset: {x: 0, y: 100, z: 0}
+  AdditionalOffset: {x: 0, y: 40, z: 0}
 --- !u!95 &8526275246466574546
 Animator:
   serializedVersion: 5
