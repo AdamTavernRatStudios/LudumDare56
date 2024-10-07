@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placerPanel: {fileID: 0}
+  CreationParticles: {fileID: 8541549581114709916, guid: 8e184371a025ed645bee857a0fe2b235, type: 3}
 --- !u!114 &-2231909461033624956
 MonoBehaviour:
   m_ObjectHideFlags: 0

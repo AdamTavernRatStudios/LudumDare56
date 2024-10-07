@@ -31,10 +31,16 @@ public class EventSystemCustom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(eventSystem.currentSelectedGameObject == null)
+        if(eventSystem.currentSelectedGameObject == null || eventSystem.currentSelectedGameObject.activeInHierarchy == false)
         {
-            var firstSelectable = FindAnyObjectByType<Selectable>();
-            eventSystem.SetSelectedGameObject(firstSelectable.gameObject);
+            var firstSelectables = FindObjectsOfType<Selectable>();
+            foreach(var s in firstSelectables)
+            {
+                if (s.gameObject.activeInHierarchy && s.interactable)
+                {
+                    eventSystem.SetSelectedGameObject(s.gameObject);
+                }
+            }
         }
     }
 }

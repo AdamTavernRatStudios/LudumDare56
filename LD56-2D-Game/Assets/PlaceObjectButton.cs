@@ -6,6 +6,7 @@ public class PlaceObjectButton : MonoBehaviour
 {
     public ObjectPlacerPanel placerPanel;
     MatchWorldObjectPosition matchpos;
+    public GameObject CreationParticles = null;
     private void Start()
     {
         matchpos = GetComponent<MatchWorldObjectPosition>();
@@ -26,6 +27,7 @@ public class PlaceObjectButton : MonoBehaviour
             }
         }
         ObjectPlacementPoints.Instance.PlacedObjectsDictionary[matchpos.worldObject] = Instantiate(placerPanel.currentObject.ObjectPrefab, matchpos.worldObject.position, Quaternion.identity);
+        Instantiate(CreationParticles, matchpos.worldObject.position, Quaternion.identity);
         placerPanel.ClearButtons();
     }
 }

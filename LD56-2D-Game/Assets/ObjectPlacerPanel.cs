@@ -72,6 +72,13 @@ public class ObjectPlacerPanel : MonoBehaviour
         {
             Destroy(b.gameObject);
         }
+
+        StartCoroutine(ShowPanelOnDelay());
+    }
+
+    IEnumerator ShowPanelOnDelay()
+    {
+        yield return new WaitForSeconds(1);
         newdaypanel.gameObject.SetActive(true);
     }
 

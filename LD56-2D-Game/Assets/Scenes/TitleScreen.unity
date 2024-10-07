@@ -364,10 +364,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8729595879665787583, guid: d1923a76814744a47a19fe0bbacbc22f, type: 3}
-      propertyPath: m_Transition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729595879665787583, guid: d1923a76814744a47a19fe0bbacbc22f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
       value: 0.0077874744
       objectReference: {fileID: 0}
@@ -594,10 +590,6 @@ PrefabInstance:
     - target: {fileID: 8253995530856171868, guid: d1923a76814744a47a19fe0bbacbc22f, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8729595879665787583, guid: d1923a76814744a47a19fe0bbacbc22f, type: 3}
-      propertyPath: m_Transition
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8729595879665787583, guid: d1923a76814744a47a19fe0bbacbc22f, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
