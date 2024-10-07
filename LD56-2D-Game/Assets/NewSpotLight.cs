@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NewSpotLight : MonoBehaviour
 {
+    public GameObject OverlayAll;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +17,12 @@ public class NewSpotLight : MonoBehaviour
         if(Flea.ControlledFlea != null)
         {
             transform.position = Flea.ControlledFlea.transform.position;
+            OverlayAll.SetActive(false);
         }
         else
         {
             transform.position = new Vector3(0, -200, 0);
+            OverlayAll.SetActive(true);
         }
     }
 }

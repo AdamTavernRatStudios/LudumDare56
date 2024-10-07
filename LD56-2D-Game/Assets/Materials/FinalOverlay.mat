@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Multiply
+  m_Name: FinalOverlay
   m_Shader: {fileID: -6465566751694194690, guid: ecf0889e5e4d7407a838788789772042, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.7
+    - _Alpha: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors: []
