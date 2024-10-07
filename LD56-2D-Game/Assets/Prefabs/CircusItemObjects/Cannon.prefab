@@ -5119,6 +5119,7 @@ GameObject:
   - component: {fileID: 4793118559264141721}
   - component: {fileID: 6747014964548695719}
   - component: {fileID: -8941486992490940278}
+  - component: {fileID: 6643629437764735948}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -5136,7 +5137,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -6.57, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3651050509329950116}
@@ -5156,6 +5157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flea: {fileID: 0}
   HidePlayerWhenOccupied: 1
+  MakePlayerKinematic: 0
+  ResetTime: 0.5
   collisionListener: {fileID: 4926609073103391545}
   anim: {fileID: -8941486992490940278}
   BlastPoint: {fileID: 4525000172174558184}
@@ -5182,3 +5185,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6643629437764735948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8146429654335061936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d462f91760006d4ab5c435ebc48c693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -17,27 +17,6 @@ public class BubbleBlower : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.RoundStarted.AddListener(HandleRoundStarted);
-        GameManager.Instance.RoundEnded.AddListener(HandleRoundEnded);
-    }
-    private void OnDisable()
-    {
-        GameManager.Instance.RoundStarted.RemoveListener(HandleRoundStarted);
-        GameManager.Instance.RoundEnded.RemoveListener(HandleRoundEnded);
-    }
-
-    private void HandleRoundEnded()
-    {
-        this.StopAllCoroutines();
-    }
-
-    private void HandleRoundStarted()
-    {
-        RunBubbleBlower();
-    }
-
-    public void RunBubbleBlower()
-    {
         StartCoroutine(BubbleBlowerRoutine());
     }
 
@@ -45,6 +24,11 @@ public class BubbleBlower : MonoBehaviour
     {
         while (true)
         {
+            if (!GameManager.Instance.DayIsOccuring)
+            {
+                yield return null;
+                continue;
+            }
             bubbleBlowerSR.sprite = OnSprite;
             for (int i = 0; i < NumBubbles; i++)
             {

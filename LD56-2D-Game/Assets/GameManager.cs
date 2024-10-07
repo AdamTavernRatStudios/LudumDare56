@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    bool DayIsOccuring = false;
+    public bool DayIsOccuring = false;
     public void EndRound()
     {
         if (!DayIsOccuring) return;
