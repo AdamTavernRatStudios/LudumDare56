@@ -4,8 +4,8 @@ Platforms with LIGHTS	BonusPlatform	Platform	Upgrade your platforms with lights 
 Flaming Hoop	FlamingHoop	Between Platforms	Jump through the flaming hoop for extra points	453964	FireHoop	20
 Rolling Globe	Globe	On Standard Platform	Hop on the rolling globe from a standard platform and move slowly to keep your balance	5D5B3B	GlobeBase	30
 Pogo Stick	PogoStick	On Standard Platform	Pick the pogo stick up off a standard platform and bounce around the stage	5D5B3B	PogoUp	30
-Trampoline	Trampoline	Platform	Replace your base platform with a trampoline for extra height	6F313F	TrampolineIdle	50
-Cannon	Cannon	On Standard Platform	Hop in the cannon on a standard platform to be blasted across the stage	5D5B3B	Cannon	100
-Trapeze 	Trapeze	Between Platforms	Catch the trapeze between platforms to catch some extra air and points	453964	Trapeze	150
-Tightrope	TightRope	Between Platforms	Move slowly across the tightrope between platforms and wow the audience	453964	TightropeSegment	200
-Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate. Hop on top of the bubbles for extra height	5D5B3B	BubbleBlower	250
+Trampoline	Trampoline	Platform	Replace your base platform with a trampoline for extra height	6F313F	TrampolineIdle	70
+Cannon	Cannon	On Standard Platform	Hop in the cannon on a standard platform to be blasted across the stage	5D5B3B	Cannon	150
+Trapeze 	Trapeze	Between Platforms	Catch the trapeze between platforms to catch some extra air and points	453964	Trapeze	300
+Tightrope	TightRope	Between Platforms	Move slowly across the tightrope between platforms and wow the audience	453964	TightropeSegment	400
+Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate. Hop on top of the bubbles for extra height	5D5B3B	BubbleBlower	400
