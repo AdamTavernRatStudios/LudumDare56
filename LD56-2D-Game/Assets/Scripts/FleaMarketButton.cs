@@ -4,24 +4,23 @@ using UnityEngine.UI;
 
 public class FleaMarketButton : MonoBehaviour
 {
-    public CircusObjectData fleamarketdata;
+    public CircusObjectDatum objectData;
 
-    public TextMeshProUGUI titleText;
-    public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI MainText;
     public TextMeshProUGUI cost; 
     public Image image;
+    public Image background;
 
     private void Start()
     {
-        //titleText.text = fleamarketdata.Furniture_name;
-       // descriptionText.text = fleamarketdata.Description;
-       // image.sprite = fleamarketdata.MainSprite;
+        MainText.text = objectData.ObjectName + "<size=50%>" + '\n' + objectData.Description;
+        image.sprite = objectData.sprite;
+        cost.text = objectData.Cost.ToString();
+        background.color = Utils.HexToColor(objectData.TentColor);
     }
 
-    public void LoadFleaMarketItems()
+    public void SetAsCurrentObject()
     {
-        //ObjectDroppingManager.Instance.CreateNewFleaMarketItems(fleamarketdata);
+        ObjectPlacerPanel.Instance.RecieveObject(objectData);
     }
-
-  
 }

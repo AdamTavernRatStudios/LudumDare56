@@ -124,6 +124,9 @@ public class CatalogDataParser : Editor
                     case PrefabName:
                         CircusObject.ObjectPrefab = FindAndAssignPrefab(dataString);
                         break;
+                    case SpriteName:
+                        CircusObject.sprite = FindSprite(dataString);
+                        break;
                 }
             }
 
@@ -148,6 +151,21 @@ public class CatalogDataParser : Editor
             if (loadedPrefab != null && loadedPrefab.name == prefabName)
             {
                 return loadedPrefab;
+            }
+        }
+        return null;
+    }
+
+    public static Sprite FindSprite(string spriteName)
+    {
+        string[] guids = AssetDatabase.FindAssets("t:Sprite", new[] { "Assets/Sprites" });
+        foreach (var g in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(g);
+            var asset = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+            if(asset.name == spriteName)
+            {
+                return asset;
             }
         }
         return null;

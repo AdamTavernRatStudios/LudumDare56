@@ -21,6 +21,8 @@ public class ObjectPlacementPoints : MonoBehaviour
     public List<Transform> PlatformSpots;
     public List<Transform> PlatformObjectSpots;
     public List<Transform> BetweenSpots;
+
+    public GameObject BasePlatform;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,14 @@ public class ObjectPlacementPoints : MonoBehaviour
         {
             sprite.enabled = false;
         }
+        foreach (var spot in PlatformSpots)
+        {
+            var newObject = Instantiate(BasePlatform, spot.transform.position, Quaternion.identity);
+            PlacedObjectsDictionary[spot] = newObject;
+        }
     }
+
+    public Dictionary<Transform, GameObject> PlacedObjectsDictionary = new();
 
     // Update is called once per frame
     void Update()

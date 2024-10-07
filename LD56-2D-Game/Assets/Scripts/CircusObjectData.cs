@@ -22,6 +22,7 @@ public class CircusObjectDatum
     public string ObjectName = "ObjectName";
     public string Description = "DescriptionHere";
     public string TentColor = "FFFFFFFF";
+    public Sprite sprite = null;
     public ObjectType objectType = ObjectType.UNKNOWN;
     public int Cost = 100;
     public GameObject ObjectPrefab;

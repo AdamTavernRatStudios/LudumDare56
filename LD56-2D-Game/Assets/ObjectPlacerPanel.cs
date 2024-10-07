@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ObjectPlacerPanel : MonoBehaviour
 {
@@ -10,11 +12,33 @@ public class ObjectPlacerPanel : MonoBehaviour
     [HideInInspector]
     public CircusObjectDatum currentObject;
     public GameObject PlaceObjectButtonPrefab;
-    // Start is called before the first frame update
-    void Start()
+    public NewDayPanel newdaypanel;
+    public GameObject BasePlatform;
+
+
+    public static ObjectPlacerPanel Instance { get; private set; }
+
+    void Awake()
     {
-        currentObject = objectData.data[5];
-        LoadButtonsForPlacement(currentObject);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    private void Start()
+    {
+        GameManager.Instance.RoundStarted.AddListener(ResetObjects);
+    }
+
+    public void RecieveObject(CircusObjectDatum currObject)
+    {
+        LoadButtonsForPlacement(currObject);
+        newdaypanel.gameObject.SetActive(false);
     }
 
     public void LoadButtonsForPlacement(CircusObjectDatum currObject)
@@ -47,6 +71,23 @@ public class ObjectPlacerPanel : MonoBehaviour
         foreach(var b in placerButtons)
         {
             Destroy(b.gameObject);
+        }
+        newdaypanel.gameObject.SetActive(true);
+    }
+
+    void ResetObjects()
+    {
+        var keys = ObjectPlacementPoints.Instance.PlacedObjectsDictionary.Keys.ToList();
+        for(int i = 0; i < keys.Count; i++)
+        {
+            var spot = keys[i];
+            var obj = ObjectPlacementPoints.Instance.PlacedObjectsDictionary[spot];
+            if(obj == null)
+            {
+                continue;
+            }
+            ObjectPlacementPoints.Instance.PlacedObjectsDictionary[spot] = Instantiate(obj, spot.position, Quaternion.identity);
+            Destroy(obj);
         }
     }
 }

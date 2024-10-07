@@ -839,6 +839,7 @@ MonoBehaviour:
   - {fileID: 4482294810783589570}
   - {fileID: 7135874891115381636}
   - {fileID: 608974649209170881}
+  BasePlatform: {fileID: 4509698131780900435, guid: 635aa75644c78a347b08affe1f90732f, type: 3}
 --- !u!1001 &3027960283105010457
 PrefabInstance:
   m_ObjectHideFlags: 0

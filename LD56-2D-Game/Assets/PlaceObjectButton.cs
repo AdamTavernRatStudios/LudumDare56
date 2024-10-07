@@ -12,7 +12,20 @@ public class PlaceObjectButton : MonoBehaviour
     }
     public void PlaceCurrentObjectHere()
     {
-        Instantiate(placerPanel.currentObject.ObjectPrefab, matchpos.worldObject.position, Quaternion.identity);
+        if(ObjectPlacementPoints.Instance.PlacedObjectsDictionary.TryGetValue(matchpos.worldObject, out GameObject ExistingObject))
+        {
+            Destroy(ExistingObject);
+            if (placerPanel.currentObject.objectType == CircusObjectDatum.ObjectType.Platform)
+            {
+                var childPos = matchpos.worldObject.GetChild(0).transform;
+                if (ObjectPlacementPoints.Instance.PlacedObjectsDictionary.TryGetValue(childPos, out GameObject platformObj))
+                {
+                    Destroy(platformObj);
+                    ObjectPlacementPoints.Instance.PlacedObjectsDictionary[matchpos.worldObject] = null;
+                }
+            }
+        }
+        ObjectPlacementPoints.Instance.PlacedObjectsDictionary[matchpos.worldObject] = Instantiate(placerPanel.currentObject.ObjectPrefab, matchpos.worldObject.position, Quaternion.identity);
         placerPanel.ClearButtons();
     }
 }

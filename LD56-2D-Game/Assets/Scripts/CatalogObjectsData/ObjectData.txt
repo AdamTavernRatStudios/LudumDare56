@@ -1,11 +1,11 @@
 Item Name	Prefab Name	Type	Description	Tent Color	Asset Name	Cost
-Flaming Hoop	FlamingHoop	Between Platforms	Jump through the flaming hoop for extra points	453964	FireHoop1	10
-Cannon	Cannon	On Standard Platform	Hop in the cannon on a standard platform to be blasted across the stage	5D5B3B	Cannon.png	10
-Trapeze 	Trapeze	Between Platforms	Catch the trapeze between platforms to catch some extra air and points	453964	Trapeze.png	10
-Pogo Stick	PogoStick	On Standard Platform	Pick the pogo stick up off a standard platform and bounce around the stage	5D5B3B	PogoUp.png	10
-Tightrope	TightRope	Between Platforms	Move slowly across the tightrope between platforms and wow the audience	453964	TightRopeSegment.png	10
-Trampoline	Trampoline	Platform	Replace your base platform with a trampoline for extra height	6F313F	TrampolingIdle.png	10
-Platforms with LIGHTS	BonusPlatform	Platform	Upgrade your platforms with lights for a bonus points	6F313F	BasePlatform.png	10
-Rolling Globe	Globe	On Standard Platform	Hop on the rolling globe from a standard platform and move slowly to keep your balance	5D5B3B	GlobeBase.png	10
-Standard Platform	NormalPlatform	Platform	Sometimes simple is better. Downgrade back to a standard platform	6F313F	BasePlatform.png	10
-Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate. Hop on top of the bubbles for extra height	5D5B3B	BubbleBlower.png	10
+Flaming Hoop	FlamingHoop	Between Platforms	Jump through the flaming hoop for extra points	453964	FireHoop	10
+Cannon	Cannon	On Standard Platform	Hop in the cannon on a standard platform to be blasted across the stage	5D5B3B	Cannon	10
+Trapeze 	Trapeze	Between Platforms	Catch the trapeze between platforms to catch some extra air and points	453964	Trapeze	10
+Pogo Stick	PogoStick	On Standard Platform	Pick the pogo stick up off a standard platform and bounce around the stage	5D5B3B	PogoUp	10
+Tightrope	TightRope	Between Platforms	Move slowly across the tightrope between platforms and wow the audience	453964	TightropeSegment	10
+Trampoline	Trampoline	Platform	Replace your base platform with a trampoline for extra height	6F313F	TrampolineIdle	10
+Platforms with LIGHTS	BonusPlatform	Platform	Upgrade your platforms with lights for a bonus points	6F313F	BasePlatform	10
+Rolling Globe	Globe	On Standard Platform	Hop on the rolling globe from a standard platform and move slowly to keep your balance	5D5B3B	GlobeBase	10
+Standard Platform	NormalPlatform	Platform	Sometimes simple is better. Downgrade back to a standard platform	6F313F	BasePlatform	10
+Bubble Blower	BubbleBlower	On Standard Platform	Jump on top of the bubble blower on a standard platform to activate. Hop on top of the bubbles for extra height	5D5B3B	BubbleBlower	10
