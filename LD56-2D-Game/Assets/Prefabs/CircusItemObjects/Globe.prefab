@@ -421,7 +421,7 @@ MonoBehaviour:
   MakePlayerKinematic: 0
   ResetTime: 0.1
   Shading: {fileID: 2090316136601697597}
-  SecondsPerTrickEarned: 2
+  SecondsPerTrickEarned: 0.8
 --- !u!58 &8561343911116028400
 CircleCollider2D:
   m_ObjectHideFlags: 0

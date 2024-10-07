@@ -230,10 +230,11 @@ MonoBehaviour:
   flea: {fileID: 0}
   HidePlayerWhenOccupied: 0
   MakePlayerKinematic: 1
+  ResetTime: 0.5
   collisionListener: {fileID: 8558405823230484437}
   FleaPosition: {fileID: 8732723171702801523}
   rb: {fileID: 440107351749595583}
-  BouncePower: 10
+  BouncePower: 11
   MoveAmount: 10
 --- !u!114 &8558405823230484437
 MonoBehaviour:

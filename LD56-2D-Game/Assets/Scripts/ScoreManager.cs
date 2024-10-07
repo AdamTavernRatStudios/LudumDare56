@@ -149,7 +149,7 @@ public class ScoreManager : MonoBehaviour
             case TrickType.GetSpunByFlea: return 50;
             case TrickType.JumpThroughHoop: return 30;
             case TrickType.CannonBlast: return 20;
-            case TrickType.PogoStickBounce: return 20;
+            case TrickType.PogoStickBounce: return 30;
             case TrickType.TrampolineBounce: return 10;
             case TrickType.LandOnBonusPlatform:  return 25;
             case TrickType.EnterCannon:  return 5;
