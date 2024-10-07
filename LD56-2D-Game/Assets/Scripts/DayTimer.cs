@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class DayTimer : MonoBehaviour
     public float TimePerDay = 60f;
     public float TimeElapsed = 0f;
 
-    public Slider timerSlider;
+    public TextMeshProUGUI timerText;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,7 @@ public class DayTimer : MonoBehaviour
 
     private void StopTimer()
     {
-        timerSlider.value = 1f;
+        timerText.text = "00:00";
         TimerIsRunning = false;
     }
 
@@ -44,7 +45,12 @@ public class DayTimer : MonoBehaviour
             return;
         }
         var PercentComplete = Mathf.Clamp(TimeElapsed / TimePerDay, 0f, 1f);
-        timerSlider.value = PercentComplete;
+        var numString = ((int)(TimePerDay - TimePerDay * PercentComplete)).ToString();
+        if(numString.Length == 1)
+        {
+            numString = "0" + numString;
+        }
+        timerText.text = "00:" + numString;
         TimeElapsed += Time.deltaTime;
         if(TimeElapsed > TimePerDay)
         {
