@@ -34,7 +34,7 @@ public class FleaMarketScrollView : MonoBehaviour
     void Setup()
     {
         var objects = circusObjectData.data;
-        objects.Sort((a, b) => a.objectType.CompareTo(b.objectType));
+        objects.Sort((a, b) => a.Cost.CompareTo(b.Cost));
         foreach (var data in objects)
         {
             var newButton = Instantiate(button, viewportPanel);
