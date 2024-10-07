@@ -8,6 +8,7 @@ public class FleaMarketButton : MonoBehaviour
     public CircusObjectDatum objectData;
 
     public TextMeshProUGUI MainText;
+    public TextMeshProUGUI DescriptionText;
     public TextMeshProUGUI cost; 
     public Image image;
     public Image background;
@@ -16,7 +17,8 @@ public class FleaMarketButton : MonoBehaviour
     private void Start()
     {
         button = GetComponent<Button>();
-        MainText.text = objectData.ObjectName + "<size=50%>" + '\n' + objectData.Description;
+        MainText.text = objectData.ObjectName;
+        DescriptionText.text = objectData.Description;
         image.sprite = objectData.sprite;
         cost.text = objectData.Cost.ToString();
         background.color = Utils.HexToColor(objectData.TentColor);
