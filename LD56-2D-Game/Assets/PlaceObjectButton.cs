@@ -28,6 +28,7 @@ public class PlaceObjectButton : MonoBehaviour
         }
         ObjectPlacementPoints.Instance.PlacedObjectsDictionary[matchpos.worldObject] = Instantiate(placerPanel.currentObject.ObjectPrefab, matchpos.worldObject.position, Quaternion.identity);
         Instantiate(CreationParticles, matchpos.worldObject.position, Quaternion.identity);
+        AudioManager.PlayClip(Audio.Clips.placeItem);
         placerPanel.ClearButtons();
     }
 }
