@@ -18,6 +18,7 @@ public class Trapese : CircusItem
         if (TryAddPlayer(other.GetComponent<Flea>()))
         {
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.GrabTrapese);
+            AudioManager.PlayClip(Audio.Clips.TrapezeGrab, AudioManager.GenericRandomizedData);
             DoInteractionOnDelay(10f);
         }
     }
@@ -43,5 +44,7 @@ public class Trapese : CircusItem
         var f = RemovePlayer();
         f.rb.velocity = LastTwoPositionsDiff * LeapBoost + Vector3.up * 5;
         ScoreManager.AddTrick(f, ScoreManager.TrickType.ExitTrapese);
+        AudioManager.PlayClip(Audio.Clips.TrapezeGrab, AudioManager.GenericRandomizedData);
+
     }
 }

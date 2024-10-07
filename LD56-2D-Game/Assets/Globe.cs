@@ -14,6 +14,7 @@ public class Globe : CircusItem
             {
                 ScoreManager.AddTrick(flea, ScoreManager.TrickType.EnterGlobe);
                 TimeSpentOnGlobe = 0f;
+                AudioManager.PlayClip(Audio.Clips.HopOnOffBall, AudioManager.GenericRandomizedData);
             }
         }
     }
@@ -25,6 +26,7 @@ public class Globe : CircusItem
         {
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.ExitGlobe);
             RemovePlayer();
+            AudioManager.PlayClip(Audio.Clips.HopOnOffBall, AudioManager.GenericRandomizedData);
         }
     }
 

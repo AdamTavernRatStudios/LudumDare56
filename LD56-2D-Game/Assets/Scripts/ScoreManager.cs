@@ -80,6 +80,13 @@ public class ScoreManager : MonoBehaviour
         GameManager.Instance.RoundEnded.RemoveListener(HandleRoundEnded);
         GameManager.Instance.RoundStarted.RemoveListener(HandleRoundStart);
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.M) && Application.isEditor){
+            TotalMoney += 10000;
+        }
+    }
     private void HandleRoundEnded()
     {
         
@@ -127,6 +134,7 @@ public class ScoreManager : MonoBehaviour
         }
         EffectsManager.Instance.ShowTextPopup(flea, message, flea.FleaColor);
 
+        AudioManager.PlayClip(Audio.Clips.FleaNoises);
         PointsAddedEvent.Invoke((PointsToScore + HeightBonus) + flea.ComboCounter);
     }
 

@@ -22,6 +22,7 @@ public class Trampoline : MonoBehaviour
                 {
                     ScoreManager.AddTrick(f, ScoreManager.TrickType.TrampolineBounce);
                     f.rb.velocity = new Vector2(f.rb.velocity.x, BounceHeight);
+                    AudioManager.PlayClip(Audio.Clips.TrampolineBounce, AudioManager.GenericRandomizedData);
                     anim.SetTrigger("Bounce");
                 }
             }

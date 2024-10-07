@@ -32,6 +32,7 @@ public class Cannon : CircusItem
 
     public override void DoInteraction()
     {
+        AudioManager.PlayClip(Audio.Clips.CannonBlast, AudioManager.GenericRandomizedData);
         anim.SetTrigger("Blast");
         PS.Emit(20);
         var f = RemovePlayer();

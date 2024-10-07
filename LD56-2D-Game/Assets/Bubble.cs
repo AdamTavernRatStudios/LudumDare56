@@ -15,6 +15,7 @@ public class Bubble : MonoBehaviour
             ScoreManager.AddTrick(f, ScoreManager.TrickType.BubbleBounce);
             var particles = Instantiate(BubbleParticles, transform.position, Quaternion.identity);
             Destroy(particles, 1f);
+            AudioManager.PlayClip(Audio.Clips.BubblePop);
             Destroy(this.gameObject);
         }
     }
@@ -22,5 +23,6 @@ public class Bubble : MonoBehaviour
     private void Start()
     {
         Destroy(this.gameObject, 10f);
+        AudioManager.PlayClip(Audio.Clips.BubbleGrow);
     }
 }

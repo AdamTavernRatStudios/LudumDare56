@@ -41,6 +41,7 @@ public class TightRope : CircusItem
         {
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.EnterTightRope);
             DoInteractionOnDelay(10f);
+            AudioManager.PlayClip(Audio.Clips.TrapezeSound);
             flea.transform.parent = collisionListener.transform;
             anim.SetTrigger("Active");
             PrevPos = flea.transform.position;
@@ -54,6 +55,8 @@ public class TightRope : CircusItem
         RemovePlayer();
         StartCoroutine(ResetCollider());
         anim.SetTrigger("Idle");
+        AudioManager.PlayClip(Audio.Clips.TrapezeSound);
+
     }
 
     IEnumerator ResetCollider()

@@ -43,6 +43,8 @@ public class PogoStick : CircusItem
         if (Occupied)
         {
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.PogoStickBounce);
+            AudioManager.PlayClip(Audio.Clips.PogoBounce, AudioManager.GenericRandomizedData);
+
         }
     }
     void Update()
