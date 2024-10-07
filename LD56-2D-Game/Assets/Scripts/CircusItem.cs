@@ -20,7 +20,7 @@ public class CircusItem : MonoBehaviour
             if (HidePlayerWhenOccupied)
             {
                 flea.rb.isKinematic = true;
-                flea.transform.position = new Vector3(0, -200, 0);
+                flea.transform.position = new Vector3(0, 500, 0);
                 flea.coll.enabled = false;
             }
             if (MakePlayerKinematic)

@@ -112,7 +112,7 @@ public class ScoreManager : MonoBehaviour
         var tricksList = scoresDict[flea.FleaNumber];
         tricksList.Add(trickType);
         int PointsToScore = GetBaseScoreFromTrick(trickType);
-        int HeightBonus = (int)(flea.transform.position.y - Floor.FloorHeight) / 2;
+        int HeightBonus = Mathf.Max(0,(int)(flea.transform.position.y - Floor.FloorHeight) / 2);
         if(tricksList.Count >= 2)
         {
             // If the last two tricks were different add to the combo counter and add that to the total

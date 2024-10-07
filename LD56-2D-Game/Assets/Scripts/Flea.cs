@@ -63,7 +63,6 @@ public class Flea : MonoBehaviour
         public bool SpinJustPressed = false;
         public bool SpinJustReleased = false;
     }
-
     void Start()
     {
         input = GetComponent<PlayerInput>();
@@ -87,6 +86,14 @@ public class Flea : MonoBehaviour
         (activeCircusItem is TightRope || activeCircusItem is Globe);
     private void FixedUpdate()
     {
+        if(transform.position.y < Floor.Instance.transform.position.y ||
+            transform.position.y > 600 ||
+            Mathf.Abs(transform.position.x) > 50 ||
+            rb.velocity.magnitude > 500)
+        {
+            transform.position = Vector3.zero;
+            rb.velocity = Vector3.zero;
+        }
         if (UseRecordedData)
         {
             if(FixedUpdateCounter < RecordedInputs.Count)
