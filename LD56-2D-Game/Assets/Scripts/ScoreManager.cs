@@ -9,6 +9,21 @@ public class ScoreManager : MonoBehaviour
     Dictionary<int, List<TrickType>> scoresDict = new();
     [HideInInspector]
     public int CurrentRoundScore = 0;
+    private int _TotalMoney = 100;
+    public int TotalMoney
+    {
+        get
+        {
+            return _TotalMoney;
+        }
+        set
+        {
+            var oldVal = _TotalMoney;
+            _TotalMoney = value;
+            MoneyChanged.Invoke(oldVal, _TotalMoney);
+        }
+    }
+    public UnityEvent<int, int> MoneyChanged;
 
     public static UnityEvent<int> PointsAddedEvent = new UnityEvent<int>();
 

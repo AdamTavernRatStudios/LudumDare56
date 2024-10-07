@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,10 @@ public class FleaMarketButton : MonoBehaviour
 
     public void SetAsCurrentObject()
     {
-        ObjectPlacerPanel.Instance.RecieveObject(objectData);
+        if(objectData.Cost <= ScoreManager.Instance.TotalMoney)
+        {
+            ScoreManager.Instance.TotalMoney -= objectData.Cost;
+            ObjectPlacerPanel.Instance.RecieveObject(objectData);
+        }
     }
 }

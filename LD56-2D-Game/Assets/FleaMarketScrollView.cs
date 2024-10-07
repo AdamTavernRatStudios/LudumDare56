@@ -13,7 +13,24 @@ public class FleaMarketScrollView : MonoBehaviour
     private void Start()
     {
         Setup();
+        GameManager.Instance.RoundStarted.AddListener(HandleRoundStarted);
+        GameManager.Instance.RoundEnded.AddListener(HandleRoundEnded);
     }
+
+    private void HandleRoundStarted()
+    {
+        var existingButtons = GetComponentsInChildren<FleaMarketButton>();
+        for(int i = 0; i < existingButtons.Length; i++)
+        {
+            Destroy(existingButtons[i].gameObject);
+        }
+    }
+
+    private void HandleRoundEnded()
+    {
+        Setup();
+    }
+
     void Setup()
     {
         var objects = circusObjectData.data;

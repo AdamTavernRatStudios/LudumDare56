@@ -10,32 +10,32 @@ public class NewDayPanel : MonoBehaviour
     public CanvasGroup canvasGroup;
     public Button StartButton;
     public TextMeshProUGUI buttonText;
+    Animator anim;
+    public TextMeshProUGUI MoneyText;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
         GameManager.Instance.RoundEnded.AddListener(ShowPanel);
         ShowPanel();
     }
 
-    private void OnDisable()
-    {
-        GameManager.Instance.RoundEnded.RemoveListener(ShowPanel);
-    }
-
     void ShowPanel()
     {
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 0f;
-        LeanTween.value(0f, 1f, 0.5f).setOnUpdate((f) => canvasGroup.alpha = f);
+        anim.SetTrigger("Enter");
         StartButton.interactable = true;
         RewiredEventSystem.current.SetSelectedGameObject(StartButton.gameObject);
         buttonText.text = "Start day: " + (GameManager.Instance.Day+1).ToString();
+        MoneyText.text = "$" + ScoreManager.Instance.TotalMoney.ToString();
+    
+        ScoreManager.Instance.TotalMoney += ScoreManager.Instance.CurrentRoundScore / 10;
     }
 
     public void StartRound()
     {
+        anim.SetTrigger("Exit");
         StartButton.interactable = false;
-        LeanTween.value(1f, 0f, 0.5f).setOnUpdate((f) => canvasGroup.alpha = f).setOnComplete(() =>
+        LeanTween.value(1f, 0f, 0.5f).setOnComplete(() =>
         {
             canvasGroup.blocksRaycasts = true;
             GameManager.Instance.StartNewRound();
