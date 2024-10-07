@@ -20,7 +20,7 @@ public class FleaMarketButton : MonoBehaviour
         MainText.text = objectData.ObjectName;
         DescriptionText.text = objectData.Description;
         image.sprite = objectData.sprite;
-        cost.text = objectData.Cost.ToString();
+        cost.text = "$"+objectData.Cost.ToString();
         background.color = Utils.HexToColor(objectData.TentColor);
     }
 
