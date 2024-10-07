@@ -12,6 +12,7 @@ public class NewDayPanel : MonoBehaviour
     public TextMeshProUGUI buttonText;
     Animator anim;
     public TextMeshProUGUI MoneyText;
+    public TextMeshProUGUI FinalScoreText;
 
     private void Start()
     {
@@ -22,14 +23,27 @@ public class NewDayPanel : MonoBehaviour
 
     void ShowPanel()
     {
-        anim.SetTrigger("Enter");
-        StartButton.interactable = true;
-        RewiredEventSystem.current.SetSelectedGameObject(StartButton.gameObject);
-        buttonText.text = "Start day: " + (GameManager.Instance.Day+1).ToString();
-        MoneyText.text = "$" + ScoreManager.Instance.TotalMoney.ToString();
+        if (GameManager.Instance.Day < 6)
+        {
+            anim.SetTrigger("Enter");
+            StartButton.interactable = true;
+            RewiredEventSystem.current.SetSelectedGameObject(StartButton.gameObject);
+            buttonText.text = "Start day: " + (GameManager.Instance.Day+1).ToString();
+            MoneyText.text = "$" + ScoreManager.Instance.TotalMoney.ToString();
 
-        ScoreManager.Instance.TotalMoney += ScoreManager.Instance.GetMoneyEarned;
+            ScoreManager.Instance.TotalMoney += ScoreManager.Instance.GetMoneyEarned;
+        }
+        else
+        {
+            anim.SetTrigger("EnterFinal");
+            LeanTween.value(gameObject, 0, ScoreManager.Instance.CurrentRoundScore, 3f).setOnUpdate((float f) =>
+            {
+                FinalScoreText.text = "Final Score:" + '\n' + ((int)f).ToString();
+            }).setDelay(2.5f);
+        }
     }
+
+
 
     public void StartRound()
     {
