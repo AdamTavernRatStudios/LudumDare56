@@ -69,7 +69,7 @@ MonoBehaviour:
   rewiredPlayerIds: 00000000
   usePlayingPlayersOnly: 0
   playerMice: []
-  moveOneElementPerAxisPress: 0
+  moveOneElementPerAxisPress: 1
   setActionsById: 0
   horizontalActionId: -1
   verticalActionId: -1
@@ -84,9 +84,9 @@ MonoBehaviour:
   m_allowMouseInput: 1
   m_allowMouseInputIfTouchSupported: 1
   m_allowTouchInput: 1
-  m_deselectIfBackgroundClicked: 1
-  m_deselectBeforeSelecting: 1
-  m_ForceModuleActive: 0
+  m_deselectIfBackgroundClicked: 0
+  m_deselectBeforeSelecting: 0
+  m_ForceModuleActive: 1
 --- !u!114 &177489875036528432
 MonoBehaviour:
   m_ObjectHideFlags: 0
