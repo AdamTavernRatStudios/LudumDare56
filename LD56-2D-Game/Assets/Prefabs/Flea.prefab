@@ -5541,7 +5541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   coll: {fileID: 0}
-  JumpHeight: 20
+  JumpHeight: 17
   MoveSpeed: 50
   AddedFastFallGravity: 10
   HorizontalDragCoefficient: 0.05
