@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void ResetFleas()
+    private void ResetFleas(bool WatchingShow = false)
     {
         var fleas = GameObject.FindObjectsOfType<Flea>();
         for(int i = 0; i < fleas.Length; i++)
@@ -66,9 +66,12 @@ public class GameManager : MonoBehaviour
             newFlea.FleaNumber = i;
             newFlea.UseRecordedData = true;
         }
-        // Make new player flea
-        var flea = Instantiate(FleaPrefab);
-        flea.FleaNumber = RecordedInputs.Count;
+        if (!WatchingShow)
+        {
+            // Make new player flea
+            var flea = Instantiate(FleaPrefab);
+            flea.FleaNumber = RecordedInputs.Count;
+        }
     }
 
     bool DayIsOccuring = false;
@@ -84,9 +87,23 @@ public class GameManager : MonoBehaviour
     {
         if (DayIsOccuring) return;
 
+        if(Day >= 6)
+        {
+            WatchTheShow();
+            return;
+        }
         DayIsOccuring = true;
         ResetFleas();
         Day++;
+        RoundStarted.Invoke();
+    }
+
+    public void WatchTheShow()
+    {
+        if (DayIsOccuring) return;
+
+        DayIsOccuring = true;
+        ResetFleas(true);
         RoundStarted.Invoke();
     }
 }
