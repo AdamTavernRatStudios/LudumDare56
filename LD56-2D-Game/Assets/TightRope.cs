@@ -37,6 +37,10 @@ public class TightRope : CircusItem
 
     private void HandleCollision(Collision2D other)
     {
+        if(other.gameObject.GetComponent<Flea>() != null && Occupied)
+        {
+            RemovePlayer();
+        }
         if (TryAddPlayer(other.gameObject.GetComponent<Flea>()))
         {
             ScoreManager.AddTrick(flea, ScoreManager.TrickType.EnterTightRope);
